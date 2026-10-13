@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
 
-const nextConfig: NextConfig = {
+const baseConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
@@ -19,4 +20,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// `next dev` gets its own output folder so running `next build` alongside it
+// can't overwrite the dev server's chunks ("Cannot find module './NNN.js'").
+export default function nextConfig(phase: string): NextConfig {
+  return {
+    ...baseConfig,
+    distDir: phase === PHASE_DEVELOPMENT_SERVER ? ".next-dev" : ".next",
+  };
+}
