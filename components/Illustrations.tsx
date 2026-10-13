@@ -113,7 +113,6 @@ export function Ustad({ className = "" }: { className?: string }) {
       </g>
       {/* Head, styled after the logo mascot: gold outline, wink, handlebar moustache, red fez */}
       <circle cx="150" cy="130" r="44" fill={SKIN} stroke={GOLD} strokeWidth="3.5" />
-      <path d="M116 138 Q112 150 122 152 M184 138 Q188 150 178 152" stroke={CHILI} strokeWidth="2.5" strokeLinecap="round" fill="none" opacity=".5" />
       <g className="gu-blink">
         <circle cx="134" cy="128" r="4.2" fill={BROWN} />
       </g>
@@ -152,7 +151,6 @@ export function Chef({ className = "" }: { className?: string }) {
       </g>
       {/* Same mascot head as Ustad, scaled to this figure */}
       <circle cx="120" cy="86" r="34" fill={SKIN} stroke={GOLD} strokeWidth="3" />
-      <path d="M94 90 Q90 100 100 102 M146 90 Q150 100 140 102" stroke={CHILI} strokeWidth="2.5" strokeLinecap="round" fill="none" opacity=".5" />
       <g className="gu-blink">
         <circle cx="108" cy="84.5" r="3.4" fill={BROWN} />
       </g>
