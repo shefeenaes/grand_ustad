@@ -128,6 +128,105 @@ h3 {
 }
 .gu-reveal.is-visible { opacity: 1; transform: none; }
 
+/* ---------- Navigation ---------- */
+/* At the top: a full-width frosted bar with the brand stripe.
+   Scrolled: the stripe tucks away and the bar condenses into a floating island. */
+.gu-nav { transition: padding 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.gu-nav-stripe { transition: height 0.3s, opacity 0.3s; }
+.gu-nav.is-scrolled .gu-nav-stripe { height: 0; opacity: 0; }
+.gu-nav.is-scrolled { padding-top: 10px; }
+.gu-navbar {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(247, 247, 244, 0.5);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: background 0.4s, box-shadow 0.4s, border-color 0.4s, padding 0.4s;
+}
+.gu-nav.is-scrolled .gu-navbar {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(242, 169, 59, 0.35);
+  box-shadow: 0 14px 40px rgba(26, 27, 34, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+.gu-logo {
+  background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-chili) 100%);
+  box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.25), 0 8px 18px rgba(227, 69, 47, 0.25);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
+}
+.group:hover .gu-logo {
+  transform: rotate(-8deg) scale(1.05);
+  box-shadow: 0 0 0 6px rgba(242, 169, 59, 0.3), 0 12px 24px rgba(227, 69, 47, 0.3);
+}
+/* Warm-tinted link group with a saffron pill for the active section */
+.gu-navpill {
+  background: rgba(242, 169, 59, 0.12);
+  border: 1px solid rgba(242, 169, 59, 0.3);
+}
+.gu-navlink {
+  position: relative;
+  transition: color 0.25s, background-color 0.25s;
+}
+.gu-navlink:hover { color: var(--color-ink); background: rgba(255, 255, 255, 0.7); }
+.gu-navlink.is-active {
+  background: var(--color-saffron);
+  box-shadow: 0 6px 14px rgba(242, 169, 59, 0.4);
+}
+.gu-navlink.is-active::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-chili);
+  transform: translateX(-50%);
+}
+.gu-contact { background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-copper-light) 100%); }
+/* Hamburger → X */
+.gu-burger-line {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: var(--color-ink);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.25s, top 0.35s, bottom 0.35s;
+}
+.gu-burger.is-open .gu-burger-line:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.gu-burger.is-open .gu-burger-line:nth-child(2) { opacity: 0; transform: translateY(-50%) scaleX(0); }
+.gu-burger.is-open .gu-burger-line:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+/* Mobile menu slide-down */
+.gu-mobile-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.3s;
+}
+.gu-mobile-menu > div { overflow: hidden; min-height: 0; }
+.gu-mobile-menu.is-open { grid-template-rows: 1fr; opacity: 1; }
+.gu-mobile-item {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s, transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.2s;
+}
+.gu-mobile-menu.is-open .gu-mobile-item { opacity: 1; transform: none; }
+.gu-mobile-item:hover { background: var(--color-ground); }
+
+/* Chef blob (Get in Touch) */
+.gu-blob::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%;
+  background: radial-gradient(circle at 30% 30%, rgba(242, 169, 59, 0.45), rgba(242, 169, 59, 0.12) 70%);
+  animation: gu-blob 9s ease-in-out infinite;
+}
+@keyframes gu-blob {
+  0%, 100% { border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%; }
+  50% { border-radius: 54% 46% 48% 52% / 45% 55% 45% 55%; }
+}
+
 /* Hover polish */
 .gu-card { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.5s, border-color 0.5s; }
 .gu-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lift); border-color: var(--color-saffron); }
@@ -169,5 +268,6 @@ h3 {
     animation: none;
   }
   .gu-reveal { opacity: 1; transform: none; transition: none; }
-  .gu-card, .gu-btn, .gu-img .gu-zoom { transition: none; }
+  .gu-card, .gu-btn, .gu-img .gu-zoom, .gu-nav, .gu-navbar, .gu-nav-stripe, .gu-navlink, .gu-logo, .gu-mobile-menu, .gu-mobile-item, .gu-burger-line { transition: none; }
+  .gu-blob::before { animation: none; }
 }

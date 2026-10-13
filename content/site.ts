@@ -84,6 +84,10 @@ export const site = {
     { src: "/images/gallery-3.svg", alt: "Grand Ustad gallery image 3", span: "small" },
     { src: "/images/gallery-4.svg", alt: "Grand Ustad gallery image 4", span: "wide" },
   ],
+  contact: {
+    title: "Contact Us",
+    text: "Have a question or a quote request? Drop us a line and we’ll reply within one working day.",
+  },
   newsletter: {
     title: "Join our family",
     text: "Sign up to get all the latest news, website updates, offers and promos.",
