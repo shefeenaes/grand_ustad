@@ -120,7 +120,7 @@ export function Ustad({ className = "" }: { className?: string }) {
       <path d="M158 128 q8-7 16 0" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
       <path d="M124 116 q8-6 16 0 M158 112 q8-7 18 1" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
       <path
-        d="M150 150 C140 136 118 138 116 150 C114 160 128 164 136 156 C142 152 148 152 150 150 C152 152 158 152 164 156 C172 164 186 160 184 150 C182 138 160 136 150 150 Z"
+        d="M150 148 C160 142 174 144 184 152 C190 148 194 142 192 136 C195 146 190 160 176 162 C166 164 156 160 150 156 C144 160 134 164 124 162 C110 160 105 146 108 136 C106 142 110 148 116 152 C126 144 140 142 150 148 Z"
         fill={GOLD}
         stroke={GOLD_DARK}
         strokeWidth="2"
@@ -159,7 +159,7 @@ export function Chef({ className = "" }: { className?: string }) {
       <path d="M126 84 q6-5 12 0" stroke={BROWN} strokeWidth="2.6" strokeLinecap="round" fill="none" />
       <path d="M100 75 q6-5 12 0 M126 72 q6-5 14 1" stroke={BROWN} strokeWidth="2.6" strokeLinecap="round" fill="none" />
       <path
-        d="M120 101.4 C112.3 90.6 95.4 92.2 93.8 101.4 C92.3 109.1 103.1 112.2 109.2 106 C113.8 102.9 118.5 102.9 120 101.4 C121.5 102.9 126.2 102.9 130.8 106 C136.9 112.2 147.7 109.1 146.2 101.4 C144.6 92.2 127.7 90.6 120 101.4 Z"
+        d="M120 99.9 C127.7 95.2 138.5 96.8 146.2 102.9 C150.8 99.9 153.9 95.2 152.3 90.6 C154.7 98.3 150.8 109.1 140 110.6 C132.3 112.2 124.6 109.1 120 106 C115.4 109.1 107.7 112.2 100 110.6 C89.2 109.1 85.3 98.3 87.7 90.6 C86.1 95.2 89.2 99.9 93.8 102.9 C101.5 96.8 112.3 95.2 120 99.9 Z"
         fill={GOLD}
         stroke={GOLD_DARK}
         strokeWidth="1.6"
