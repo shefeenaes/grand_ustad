@@ -34,7 +34,7 @@ export default function Footer() {
           {/* Brand + newsletter */}
           <div className="flex max-w-[520px] flex-col gap-4">
             <a href="#banner" aria-label={`${site.name} — home`} className="flex items-center no-underline">
-              <Image src="/images/logo-without-tagline-removebg-preview.png" alt={site.name} width={602} height={414} sizes="100px" className="gu-logo-img h-16 w-auto" />
+              <Image src="/images/logo-mark-hd.png" alt={site.name} width={862} height={593} quality={95} sizes="280px" className="gu-logo-img h-[72px] w-auto" />
             </a>
             <h2 className="m-0 text-[32px] font-extrabold leading-none tracking-[-0.03em] md:text-[36px]">{site.newsletter.title}</h2>
             <p className="m-0 text-base leading-relaxed text-muted">{site.newsletter.text}</p>

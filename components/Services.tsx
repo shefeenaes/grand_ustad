@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { site } from "@/content/site";
 import Reveal from "./Reveal";
-import { ServiceIcon, ArrowIcon, ForkKnife } from "./Illustrations";
+import { ServiceIcon, ArrowIcon } from "./Illustrations";
 
 export default function Services() {
   return (
     <>
       <div className="mx-auto flex max-w-[1320px] items-center gap-[18px] px-5 md:px-10" aria-hidden="true">
         <span className="h-px flex-1 bg-line" />
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-card">
-          <ForkKnife />
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-card">
+          <Image src="/images/mascot-head.png" alt="" width={199} height={213} sizes="40px" className="h-9 w-auto" />
         </span>
         <span className="h-px flex-1 bg-line" />
       </div>

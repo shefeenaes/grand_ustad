@@ -1,10 +1,17 @@
 // Hand-drawn SVG illustrations. All motion is CSS (see globals.css) and respects prefers-reduced-motion.
 
+import Image from "next/image";
+
 const INK = "#1A1B22";
 const SAFFRON = "#F2A93B";
 const CHILI = "#E3452F";
 const SKIN = "#F6E2CF";
 const STEAM = "#9A9DAA";
+// Mascot palette (matches the logo): gold outlines, red fez, brown moustache
+const GOLD = "#B8862E";
+const GOLD_DARK = "#8C5E12";
+const BROWN = "#4A2E0E";
+const FEZ = "#D7352B";
 
 export function Steam({ paths, width = 3 }: { paths: string[]; width?: number }) {
   return (
@@ -62,8 +69,8 @@ export function Spices() {
 /** Rotating "Restaurant · Catering · Events" ring. */
 export function RotatingBadge({ className = "" }: { className?: string }) {
   return (
-    <div className={`gu-spin ${className}`} aria-hidden="true">
-      <svg viewBox="0 0 120 120">
+    <div className={`relative ${className}`} aria-hidden="true">
+      <svg viewBox="0 0 120 120" className="gu-spin absolute inset-0 h-full w-full">
         <defs>
           <path id="gu-circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
         </defs>
@@ -72,6 +79,8 @@ export function RotatingBadge({ className = "" }: { className?: string }) {
           <textPath href="#gu-circ">RESTAURANT · CATERING · EVENTS · UAE ·</textPath>
         </text>
       </svg>
+      {/* Mascot head stays still while the ring spins around it */}
+      <Image src="/images/mascot-head.png" alt="" width={199} height={213} sizes="60px" className="absolute left-1/2 top-1/2 h-[44%] w-auto -translate-x-1/2 -translate-y-1/2" />
     </div>
   );
 }
@@ -102,18 +111,26 @@ export function Ustad({ className = "" }: { className?: string }) {
         <path d="M214 222 L262 172" stroke={INK} strokeWidth="3.5" strokeLinecap="round" fill="none" />
         <circle cx="266" cy="168" r="10" fill={SKIN} stroke={INK} strokeWidth="3.5" />
       </g>
-      <circle cx="150" cy="130" r="44" fill={SKIN} stroke={INK} strokeWidth="3.5" />
-      <g className="gu-blink">
-        <circle cx="134" cy="126" r="4" fill={INK} />
-        <circle cx="166" cy="126" r="4" fill={INK} />
-      </g>
-      <path d="M124 116 q8-6 16 0 M160 116 q8-6 16 0" stroke={INK} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M150 146 q-10 10 -24 2 q6-12 24-6 q18-6 24 6 q-14 8 -24-2 Z" fill={INK} />
-      <path d="M138 158 Q150 168 162 158" stroke={INK} strokeWidth="3" strokeLinecap="round" fill="none" />
+      {/* Head, styled after the logo mascot: gold outline, wink, handlebar moustache, red fez */}
+      <circle cx="150" cy="130" r="44" fill={SKIN} stroke={GOLD} strokeWidth="3.5" />
       <path d="M116 138 Q112 150 122 152 M184 138 Q188 150 178 152" stroke={CHILI} strokeWidth="2.5" strokeLinecap="round" fill="none" opacity=".5" />
-      <path d="M108 98 Q92 44 122 44 Q124 24 150 26 Q176 24 178 44 Q208 44 192 98 Z" fill="#FFFFFF" stroke={INK} strokeWidth="3.5" />
-      <rect x="106" y="94" width="88" height="16" rx="8" fill={SAFFRON} stroke={INK} strokeWidth="3.5" />
-      <path d="M140 60 l4 8 l8 1 l-6 6 l2 8 l-8-4 l-8 4 l2-8 l-6-6 l8-1 Z" fill={SAFFRON} />
+      <g className="gu-blink">
+        <circle cx="134" cy="128" r="4.2" fill={BROWN} />
+      </g>
+      <path d="M158 128 q8-7 16 0" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M124 116 q8-6 16 0 M158 112 q8-7 18 1" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path
+        d="M150 150 C140 136 118 138 116 150 C114 160 128 164 136 156 C142 152 148 152 150 150 C152 152 158 152 164 156 C172 164 186 160 184 150 C182 138 160 136 150 150 Z"
+        fill={GOLD}
+        stroke={GOLD_DARK}
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M140 163 Q150 171 160 163" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M125 47 Q108 56 106 78" stroke={FEZ} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <ellipse cx="106" cy="86" rx="5" ry="9" fill={FEZ} stroke={GOLD_DARK} strokeWidth="1.5" />
+      <path d="M114 96 L121 46 Q150 32 179 46 L186 96 Z" fill={FEZ} stroke={GOLD_DARK} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M108 92 Q150 80 192 92 L192 102 Q150 116 108 102 Z" fill="#FFFFFF" stroke={GOLD} strokeWidth="3" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -133,15 +150,26 @@ export function Chef({ className = "" }: { className?: string }) {
         <path d="M170 150 L205 115" stroke={INK} strokeWidth="3" strokeLinecap="round" fill="none" />
         <circle cx="208" cy="112" r="8" fill={SKIN} stroke={INK} strokeWidth="3" />
       </g>
-      <circle cx="120" cy="86" r="34" fill={SKIN} stroke={INK} strokeWidth="3" />
-      <g className="gu-blink">
-        <circle cx="108" cy="84" r="3.2" fill={INK} />
-        <circle cx="132" cy="84" r="3.2" fill={INK} />
-      </g>
-      <path d="M110 98 Q120 108 130 98" stroke={INK} strokeWidth="3" strokeLinecap="round" fill="none" />
+      {/* Same mascot head as Ustad, scaled to this figure */}
+      <circle cx="120" cy="86" r="34" fill={SKIN} stroke={GOLD} strokeWidth="3" />
       <path d="M94 90 Q90 100 100 102 M146 90 Q150 100 140 102" stroke={CHILI} strokeWidth="2.5" strokeLinecap="round" fill="none" opacity=".5" />
-      <path d="M86 60 Q78 26 100 26 Q104 14 120 16 Q136 14 140 26 Q162 26 154 60 Z" fill="#FFFFFF" stroke={INK} strokeWidth="3" />
-      <rect x="86" y="56" width="68" height="12" rx="6" fill={SAFFRON} stroke={INK} strokeWidth="3" />
+      <g className="gu-blink">
+        <circle cx="108" cy="84.5" r="3.4" fill={BROWN} />
+      </g>
+      <path d="M126 84 q6-5 12 0" stroke={BROWN} strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <path d="M100 75 q6-5 12 0 M126 72 q6-5 14 1" stroke={BROWN} strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <path
+        d="M120 101.4 C112.3 90.6 95.4 92.2 93.8 101.4 C92.3 109.1 103.1 112.2 109.2 106 C113.8 102.9 118.5 102.9 120 101.4 C121.5 102.9 126.2 102.9 130.8 106 C136.9 112.2 147.7 109.1 146.2 101.4 C144.6 92.2 127.7 90.6 120 101.4 Z"
+        fill={GOLD}
+        stroke={GOLD_DARK}
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M112 111 Q120 117 128 111" stroke={BROWN} strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <path d="M101 22 Q88 29 86 46" stroke={FEZ} strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <ellipse cx="86" cy="52" rx="4" ry="7" fill={FEZ} stroke={GOLD_DARK} strokeWidth="1.3" />
+      <path d="M92 60 L97 21 Q120 10 143 21 L148 60 Z" fill={FEZ} stroke={GOLD_DARK} strokeWidth="2.6" strokeLinejoin="round" />
+      <path d="M88 57 Q120 47 152 57 L152 64 Q120 75 88 64 Z" fill="#FFFFFF" stroke={GOLD} strokeWidth="2.6" strokeLinejoin="round" />
     </svg>
   );
 }

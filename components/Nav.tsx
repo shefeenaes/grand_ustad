@@ -54,13 +54,14 @@ export default function Nav() {
         <nav aria-label="Main" className="gu-navbar flex items-center justify-between gap-5 px-3 py-3 md:px-5 md:py-3">
           <a href="#banner" aria-label={`${site.name} — home`} className="gu-up gu-brand flex items-center no-underline">
             <Image
-              src="/images/logo-without-tagline-removebg-preview.png"
+              src="/images/logo-mark-hd.png"
               alt={site.name}
-              width={602}
-              height={414}
+              width={862}
+              height={593}
               priority
-              sizes="(max-width: 768px) 70px, 84px"
-              className="gu-logo-img h-12 w-auto md:h-16"
+              quality={95}
+              sizes="(max-width: 768px) 220px, 320px"
+              className="gu-logo-img h-[52px] w-auto md:h-[72px]"
             />
           </a>
 
