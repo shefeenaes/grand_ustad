@@ -157,30 +157,12 @@ h3 {
   transform: rotate(-8deg) scale(1.05);
   box-shadow: 0 0 0 6px rgba(242, 169, 59, 0.3), 0 12px 24px rgba(227, 69, 47, 0.3);
 }
-/* Warm-tinted link group with a saffron pill for the active section */
-.gu-navpill {
-  background: rgba(242, 169, 59, 0.12);
-  border: 1px solid rgba(242, 169, 59, 0.3);
-}
-.gu-navlink {
-  position: relative;
-  transition: color 0.25s, background-color 0.25s;
-}
-.gu-navlink:hover { color: var(--color-ink); background: rgba(255, 255, 255, 0.7); }
+/* Links sit directly on the bar; the active section gets a saffron pill */
+.gu-navlink { transition: color 0.25s, background-color 0.25s; }
+.gu-navlink:hover { color: var(--color-ink); background: rgba(242, 169, 59, 0.15); }
 .gu-navlink.is-active {
   background: var(--color-saffron);
   box-shadow: 0 6px 14px rgba(242, 169, 59, 0.4);
-}
-.gu-navlink.is-active::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  width: 4px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--color-chili);
-  transform: translateX(-50%);
 }
 .gu-contact { background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-copper-light) 100%); }
 /* Hamburger → X */

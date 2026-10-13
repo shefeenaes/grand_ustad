@@ -49,7 +49,7 @@ export default function Nav() {
       {/* Brand accent stripe, mirrors the footer */}
       <span aria-hidden="true" className="gu-nav-stripe block h-[3px] bg-[linear-gradient(90deg,#F2A93B,#E3452F_55%,#F2A93B)]" />
 
-      <div className="gu-nav-shell mx-auto max-w-[1320px] px-4 md:px-6">
+      <div className="gu-nav-shell px-3 md:px-6">
         <nav aria-label="Main" className="gu-navbar flex items-center justify-between gap-5 px-3 py-3 md:px-5 md:py-3">
           <a href="#banner" className="gu-up group flex items-center gap-3 text-ink no-underline">
             <span className="gu-logo relative flex h-11 w-11 items-center justify-center rounded-full font-display text-[14px] font-extrabold text-white md:h-12 md:w-12 md:text-[15px]">
@@ -74,7 +74,7 @@ export default function Nav() {
           </button>
 
           <div className="gu-up gu-d1 hidden items-center gap-3 md:flex">
-            <ul className="gu-navpill m-0 flex list-none items-center gap-0.5 rounded-full p-1.5 text-[15px] font-semibold">
+            <ul className="m-0 flex list-none items-center gap-1 p-0 text-[15px] font-semibold">
               {links.map((l) => (
                 <li key={l.href}>
                   <a
