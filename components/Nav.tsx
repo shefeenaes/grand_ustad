@@ -104,7 +104,8 @@ export default function Nav() {
         </nav>
       </div>
 
-      <div id="mobile-menu" className={`gu-mobile-menu md:hidden ${open ? "is-open" : ""}`} aria-hidden={!open}>
+      {/* Overlay below the bar, not in flow: opening it must not push the page (and anchor targets) down */}
+      <div id="mobile-menu" className={`gu-mobile-menu absolute inset-x-0 top-full md:hidden ${open ? "is-open" : ""}`} aria-hidden={!open}>
         {/* Collapsible wrapper carries no margin, so the closed menu is exactly 0px tall */}
         <div>
         <div className="mx-4 mb-4 flex flex-col gap-1 rounded-[28px] border border-saffron/30 bg-white p-3 shadow-lift">

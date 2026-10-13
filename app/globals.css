@@ -22,6 +22,15 @@
 
 html {
   scroll-behavior: smooth;
+  /* Height of the sticky nav in its scrolled (island) state */
+  --gu-nav-h: 88px;
+}
+@media (min-width: 768px) {
+  html { --gu-nav-h: 110px; }
+}
+/* Anchor targets stop below the sticky nav instead of underneath it */
+section[id] {
+  scroll-margin-top: var(--gu-nav-h);
 }
 
 body {
