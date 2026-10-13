@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="gu-glow pointer-events-none absolute -left-[180px] -top-[120px] h-[640px] w-[640px] rounded-full bg-[radial-gradient(circle,rgba(242,169,59,0.45),rgba(242,169,59,0)_65%)]" aria-hidden="true" />
       <div className="gu-glow pointer-events-none absolute -bottom-[200px] -right-[200px] h-[720px] w-[720px] rounded-full bg-[radial-gradient(circle,rgba(227,69,47,0.28),rgba(227,69,47,0)_65%)] [animation-delay:-7s]" aria-hidden="true" />
 
-      <div className="relative mx-auto flex max-w-[1320px] flex-wrap items-center gap-12 px-5 pb-16 pt-8 md:px-10 md:pb-24 md:pt-14">
+      <div className="relative mx-auto flex max-w-[1320px] flex-wrap items-center gap-12 px-5 pb-16 pt-3 md:px-10 md:pb-24 md:pt-4">
         <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-6">
           <span className="gu-up gu-d1 inline-flex items-center gap-2.5 text-[13px] font-bold uppercase tracking-[0.18em] text-saffron">
             <span className="h-0.5 w-[30px] bg-saffron" />
