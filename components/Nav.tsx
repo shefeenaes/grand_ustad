@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { site } from "@/content/site";
 import { ArrowIcon } from "./Illustrations";
 
@@ -51,11 +52,16 @@ export default function Nav() {
 
       <div className="gu-nav-shell px-3 md:px-6">
         <nav aria-label="Main" className="gu-navbar flex items-center justify-between gap-5 px-3 py-3 md:px-5 md:py-3">
-          <a href="#banner" className="gu-up group flex items-center gap-3 text-ink no-underline">
-            <span className="gu-logo relative flex h-11 w-11 items-center justify-center rounded-full font-display text-[14px] font-extrabold text-white md:h-12 md:w-12 md:text-[15px]">
-              GU
-            </span>
-            <span className="font-display text-[22px] font-bold leading-none tracking-tight md:text-[24px]">{site.name}</span>
+          <a href="#banner" aria-label={`${site.name} — home`} className="gu-up gu-brand flex items-center no-underline">
+            <Image
+              src="/images/logo-without-tagline-removebg-preview.png"
+              alt={site.name}
+              width={602}
+              height={414}
+              priority
+              sizes="(max-width: 768px) 70px, 84px"
+              className="gu-logo-img h-12 w-auto md:h-16"
+            />
           </a>
 
           <button
@@ -98,6 +104,8 @@ export default function Nav() {
       </div>
 
       <div id="mobile-menu" className={`gu-mobile-menu md:hidden ${open ? "is-open" : ""}`} aria-hidden={!open}>
+        {/* Collapsible wrapper carries no margin, so the closed menu is exactly 0px tall */}
+        <div>
         <div className="mx-4 mb-4 flex flex-col gap-1 rounded-[28px] border border-saffron/30 bg-white p-3 shadow-lift">
           {links.map((l, i) => (
             <a
@@ -124,6 +132,7 @@ export default function Nav() {
             {contact.label}
             <ArrowIcon className="h-4 w-4" />
           </a>
+        </div>
         </div>
       </div>
     </header>

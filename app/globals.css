@@ -148,15 +148,8 @@ h3 {
   border-color: rgba(242, 169, 59, 0.35);
   box-shadow: 0 14px 40px rgba(26, 27, 34, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
 }
-.gu-logo {
-  background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-chili) 100%);
-  box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.25), 0 8px 18px rgba(227, 69, 47, 0.25);
-  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
-}
-.group:hover .gu-logo {
-  transform: rotate(-8deg) scale(1.05);
-  box-shadow: 0 0 0 6px rgba(242, 169, 59, 0.3), 0 12px 24px rgba(227, 69, 47, 0.3);
-}
+.gu-logo-img { transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.gu-brand:hover .gu-logo-img { transform: scale(1.04); }
 /* Links sit directly on the bar; the active section gets a saffron pill */
 .gu-navlink { transition: color 0.25s, background-color 0.25s; }
 .gu-navlink:hover { color: var(--color-ink); background: rgba(242, 169, 59, 0.15); }
@@ -178,15 +171,17 @@ h3 {
 .gu-burger.is-open .gu-burger-line:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
 .gu-burger.is-open .gu-burger-line:nth-child(2) { opacity: 0; transform: translateY(-50%) scaleX(0); }
 .gu-burger.is-open .gu-burger-line:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
-/* Mobile menu slide-down */
-.gu-mobile-menu {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.3s;
+/* Mobile menu slide-down (phones only; on md+ Tailwind's md:hidden removes it) */
+@media (max-width: 767.98px) {
+  .gu-mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.3s;
+  }
+  .gu-mobile-menu > div { overflow: hidden; min-height: 0; }
+  .gu-mobile-menu.is-open { grid-template-rows: 1fr; opacity: 1; }
 }
-.gu-mobile-menu > div { overflow: hidden; min-height: 0; }
-.gu-mobile-menu.is-open { grid-template-rows: 1fr; opacity: 1; }
 .gu-mobile-item {
   opacity: 0;
   transform: translateY(8px);
@@ -250,6 +245,6 @@ h3 {
     animation: none;
   }
   .gu-reveal { opacity: 1; transform: none; transition: none; }
-  .gu-card, .gu-btn, .gu-img .gu-zoom, .gu-nav, .gu-navbar, .gu-nav-stripe, .gu-navlink, .gu-logo, .gu-mobile-menu, .gu-mobile-item, .gu-burger-line { transition: none; }
+  .gu-card, .gu-btn, .gu-img .gu-zoom, .gu-nav, .gu-navbar, .gu-nav-stripe, .gu-navlink, .gu-logo-img, .gu-mobile-menu, .gu-mobile-item, .gu-burger-line { transition: none; }
   .gu-blob::before { animation: none; }
 }

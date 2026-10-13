@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/content/site";
 import Reveal from "./Reveal";
 import { NewsletterForm } from "./ContactForms";
@@ -32,9 +33,8 @@ export default function Footer() {
         <Reveal className="grid gap-10 md:grid-cols-[1.4fr_0.8fr_1fr] md:gap-12">
           {/* Brand + newsletter */}
           <div className="flex max-w-[520px] flex-col gap-4">
-            <a href="#banner" className="flex items-center gap-3 text-ink no-underline">
-              <span className="gu-logo flex h-11 w-11 items-center justify-center rounded-full font-display text-sm font-extrabold text-white">GU</span>
-              <span className="font-display text-xl font-bold tracking-tight">{site.name}</span>
+            <a href="#banner" aria-label={`${site.name} — home`} className="flex items-center no-underline">
+              <Image src="/images/logo-without-tagline-removebg-preview.png" alt={site.name} width={602} height={414} sizes="100px" className="gu-logo-img h-16 w-auto" />
             </a>
             <h2 className="m-0 text-[32px] font-extrabold leading-none tracking-[-0.03em] md:text-[36px]">{site.newsletter.title}</h2>
             <p className="m-0 text-base leading-relaxed text-muted">{site.newsletter.text}</p>

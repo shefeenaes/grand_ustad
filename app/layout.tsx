@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: site.description,
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/favicon.png", apple: "/icon-192.png" },
   manifest: "/manifest.webmanifest",
 };
 
