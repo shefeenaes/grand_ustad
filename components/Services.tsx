@@ -33,7 +33,7 @@ export default function Services() {
               <div className="flex flex-grow flex-col gap-3.5 p-7">
                 <h3 className="m-0 text-[26px] font-bold tracking-tight">{s.title}</h3>
                 <p className="m-0 flex-grow text-[15px] leading-[1.65] text-muted">{s.description}</p>
-                <a href="#getintouch" className="gu-btn self-start rounded-full bg-saffron px-5 py-3 text-sm font-bold text-ink no-underline">
+                <a href="#contactus" className="gu-btn self-start rounded-full bg-saffron px-5 py-3 text-sm font-bold text-ink no-underline">
                   Book Now
                 </a>
               </div>
@@ -41,7 +41,7 @@ export default function Services() {
           ))}
 
           <Reveal className="gu-card box-border flex min-h-[300px] flex-col justify-between gap-5 rounded-[28px] border border-saffron bg-saffron p-8 text-ink">
-            <a href="#getintouch" className="flex h-full flex-col justify-between gap-5 no-underline text-ink">
+            <a href="#contactus" className="flex h-full flex-col justify-between gap-5 no-underline text-ink">
               <span className="font-display text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[38px]">Planning something? Get in touch.</span>
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-saffron">
                 <ArrowIcon />

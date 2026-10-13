@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 /**
- * Receives Get in Touch and newsletter submissions.
+ * Receives contact form and newsletter submissions.
  * By default it logs the message on the server. Set CONTACT_WEBHOOK_URL in .env.local
  * to forward submissions (e.g. to an n8n / Zapier / Make webhook that emails you).
  */
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ ok: false, error: "A valid email is required" }, { status: 400 });
   }
-  if (body.source === "get-in-touch") {
+  if (body.source === "contact") {
     if (!String(body.name ?? "").trim() || !String(body.message ?? "").trim()) {
       return NextResponse.json({ ok: false, error: "Name and message are required" }, { status: 400 });
     }

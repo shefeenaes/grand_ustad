@@ -52,7 +52,7 @@ export default function Nav() {
 
       <div className="gu-nav-shell px-3 md:px-6">
         <nav aria-label="Main" className="gu-navbar flex items-center justify-between gap-5 px-3 py-3 md:px-5 md:py-3">
-          <a href="#banner" aria-label={`${site.name} — home`} className="gu-up gu-brand flex items-center no-underline">
+          <a href="#banner" aria-label={`${site.name} — home`} className="gu-up gu-brand ml-3 flex items-center no-underline md:ml-8">
             <Image
               src="/images/logo-mark-hd.png"
               alt={site.name}

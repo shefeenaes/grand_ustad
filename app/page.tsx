@@ -4,7 +4,6 @@ import Ticker from "@/components/Ticker";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
-import GetInTouch from "@/components/GetInTouch";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
@@ -18,7 +17,6 @@ export default function HomePage() {
         <About />
         <Services />
         <Gallery />
-        <GetInTouch />
         <ContactUs />
       </main>
       <Footer />

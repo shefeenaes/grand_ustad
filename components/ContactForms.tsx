@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { site } from "@/content/site";
-import { WhatsAppIcon, MailIcon } from "./Illustrations";
+import { SendIcon } from "./Illustrations";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -27,8 +27,8 @@ function Notice({ status }: { status: Status }) {
   return null;
 }
 
-/** "Get in Touch" form: Name, Email, Phone, Message (max 100 words). */
-export function GetInTouchForm() {
+/** Contact form: Name, Email, Phone, Message (max 100 words). */
+export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -36,7 +36,7 @@ export function GetInTouchForm() {
     const form = e.currentTarget;
     setStatus("sending");
     try {
-      const ok = await send(form, "get-in-touch");
+      const ok = await send(form, "contact");
       setStatus(ok ? "sent" : "error");
       if (ok) form.reset();
     } catch {
@@ -45,22 +45,22 @@ export function GetInTouchForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid min-w-0 flex-[1.5_1_480px] gap-[18px] sm:grid-cols-2" noValidate={false}>
+    <form onSubmit={onSubmit} className="grid min-w-0 gap-[18px] sm:grid-cols-2" noValidate={false}>
       <label className={label}>
         Name
-        <input name="name" type="text" placeholder="Name" required autoComplete="name" className={field} />
+        <input name="name" type="text" placeholder="Your name" required autoComplete="name" className={field} />
       </label>
       <label className={label}>
         Email
-        <input name="email" type="email" placeholder="Email" required autoComplete="email" className={field} />
+        <input name="email" type="email" placeholder="you@example.com" required autoComplete="email" className={field} />
       </label>
       <label className={label}>
         Phone
-        <input name="phone" type="tel" placeholder="Phone" autoComplete="tel" className={field} />
+        <input name="phone" type="tel" placeholder="+971 5X XXX XXXX" autoComplete="tel" className={field} />
       </label>
       <label className={`${label} sm:col-span-2`}>
         Message (max 100 words)
-        <textarea name="message" rows={5} placeholder="Message (max 100 words)" required maxLength={700} className={area} />
+        <textarea name="message" rows={5} placeholder="Tell us about your event, camp or facility…" required maxLength={700} className={area} />
       </label>
       <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
         <button
@@ -71,47 +71,6 @@ export function GetInTouchForm() {
           {status === "sending" ? "Sending…" : "Submit Message"}
         </button>
         <Notice status={status} />
-      </div>
-    </form>
-  );
-}
-
-/** "Contact Us" form: Full Name, Email, Message → WhatsApp or Email Now. */
-export function ContactUsForm() {
-  const [values, setValues] = useState({ fullName: "", email: "", message: "" });
-  const text = `Hello Grand Ustad,%0A%0AName: ${encodeURIComponent(values.fullName)}%0AEmail: ${encodeURIComponent(values.email)}%0A%0A${encodeURIComponent(values.message)}`;
-
-  return (
-    <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3.5">
-      <label className={label}>
-        Full Name
-        <input name="fullName" type="text" placeholder="Full Name" autoComplete="name" className={field} value={values.fullName} onChange={(e) => setValues({ ...values, fullName: e.target.value })} />
-      </label>
-      <label className={label}>
-        Email
-        <input name="email" type="email" placeholder="Email" autoComplete="email" className={field} value={values.email} onChange={(e) => setValues({ ...values, email: e.target.value })} />
-      </label>
-      <label className={label}>
-        Message
-        <textarea name="message" rows={4} placeholder="Message" className={area} value={values.message} onChange={(e) => setValues({ ...values, message: e.target.value })} />
-      </label>
-      <div className="flex flex-wrap gap-3 pt-1.5">
-        <a
-          href={`https://api.whatsapp.com/send?phone=${site.whatsapp}&text=${text}`}
-          target="_blank"
-          rel="noopener"
-          className="gu-btn inline-flex h-[54px] items-center gap-2.5 rounded-full bg-saffron px-[26px] text-[15px] font-bold text-ink no-underline"
-        >
-          <WhatsAppIcon />
-          WhatsApp
-        </a>
-        <a
-          href={`mailto:${site.email}?subject=${encodeURIComponent("Enquiry from " + (values.fullName || "website"))}&body=${text}`}
-          className="gu-btn inline-flex h-[54px] items-center gap-2.5 rounded-full border-[1.5px] border-field bg-white px-[26px] text-[15px] font-bold text-ink no-underline"
-        >
-          <MailIcon />
-          Email Now
-        </a>
       </div>
     </form>
   );
@@ -135,22 +94,29 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-wrap items-end gap-2.5 pt-1.5">
-      <label className="flex flex-[1_1_260px] flex-col gap-2 text-[13px] text-faint">
+    <form onSubmit={onSubmit} className="flex flex-col gap-2.5 pt-1.5">
+      <label htmlFor="newsletter-email" className="text-[13px] text-faint">
         Email address
-        <input name="email" type="email" required placeholder="Enter your email address" autoComplete="email" className="gu-field h-[54px] rounded-full border-[1.5px] border-field bg-white px-5 text-base text-ink placeholder:text-faint" />
       </label>
-      <button
-        type="submit"
-        aria-label="Subscribe"
-        disabled={status === "sending"}
-        className="gu-btn flex h-[54px] w-[54px] items-center justify-center rounded-full bg-saffron text-ink disabled:opacity-60"
-      >
-        <svg aria-hidden="true" className="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
-        </svg>
-      </button>
-      <div className="basis-full">{status === "sent" ? <p role="status" className="m-0 text-sm font-semibold text-[#1F7A5A]">You&rsquo;re on the list.</p> : <Notice status={status} />}</div>
+      {/* Send button sits inside the pill so field and action read as one control */}
+      <div className="relative">
+        <input id="newsletter-email" name="email" type="email" required placeholder="you@example.com" autoComplete="email" className="gu-field h-[56px] w-full rounded-full border-[1.5px] border-field bg-white pl-5 pr-[64px] text-base text-ink placeholder:text-faint" />
+        {/* Positioned via a wrapper: .gu-btn forces position: relative for its shine */}
+        <span className="absolute inset-y-0 right-[6px] flex items-center">
+          <button
+            type="submit"
+            aria-label="Subscribe"
+            disabled={status === "sending"}
+            className="gu-btn flex h-11 w-11 items-center justify-center rounded-full bg-saffron text-ink disabled:opacity-60"
+          >
+            {/* Nudged down-left: the plane's tip pulls the eye up-right */}
+            <span className="flex -translate-x-px translate-y-px">
+              <SendIcon />
+            </span>
+          </button>
+        </span>
+      </div>
+      {status === "sent" ? <p role="status" className="m-0 text-sm font-semibold text-[#1F7A5A]">You&rsquo;re on the list.</p> : <Notice status={status} />}
     </form>
   );
 }

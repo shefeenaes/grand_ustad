@@ -7,8 +7,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.grandustad.com",
   description:
     "Grand Ustad Hospitality Group — restaurant and catering services in Abu Dhabi, UAE. Mega outdoor events, labour camp catering, facility management, industrial catering and fine dine restaurants.",
-  phone: "+9712 5528857",
-  phoneHref: "+97125528857",
+  phone: "+971 52 207 7662",
+  phoneHref: "+971522077662",
   whatsapp: "971522077662",
   email: "grandustadrestaurant@gmail.com",
   address: "Building number 241, Ground floor ME 11, Musaffa, Abu Dhabi, UAE",
@@ -23,7 +23,6 @@ export const site = {
     { label: "About us", href: "#aboutus" },
     { label: "Services", href: "#services" },
     { label: "Gallery", href: "#gallery" },
-    { label: "Get in Touch", href: "#getintouch" },
     { label: "Contact us", href: "#contactus" },
   ],
   about: [
@@ -85,8 +84,9 @@ export const site = {
     { src: "/images/gallery-4.svg", alt: "Grand Ustad gallery image 4", span: "wide" },
   ],
   contact: {
-    title: "Contact Us",
-    text: "Have a question or a quote request? Drop us a line and we’ll reply within one working day.",
+    eyebrow: "Contact us",
+    title: "Send us a message",
+    text: "Tell us about your event, camp or facility and our team will come back to you within one working day.",
   },
   newsletter: {
     title: "Join our family",
