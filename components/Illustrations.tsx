@@ -69,7 +69,8 @@ export function Spices() {
 /** Rotating "Restaurant · Catering · Events" ring. */
 export function RotatingBadge({ className = "" }: { className?: string }) {
   return (
-    <div className={`relative ${className}`} aria-hidden="true">
+    // Caller positions the badge (absolute); that also makes it the containing block for the ring and head
+    <div className={className} aria-hidden="true">
       <svg viewBox="0 0 120 120" className="gu-spin absolute inset-0 h-full w-full">
         <defs>
           <path id="gu-circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />

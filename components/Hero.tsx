@@ -53,7 +53,7 @@ export default function Hero() {
           </div>
           <Spices />
           <Ustad className="gu-up gu-d4 absolute -bottom-4 -left-6 z-[3] h-[260px] w-[230px] drop-shadow-[0_24px_30px_rgba(26,27,34,0.22)] sm:-left-12 sm:h-[340px] sm:w-[300px]" />
-          <RotatingBadge className="absolute right-2 top-[240px] z-[2] h-[110px] w-[110px]" />
+          <RotatingBadge className="absolute right-1 top-[200px] z-[2] h-[92px] w-[92px] sm:right-2 sm:top-[240px] sm:h-[110px] sm:w-[110px]" />
         </div>
       </div>
     </section>
