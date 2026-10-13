@@ -127,10 +127,15 @@ export function Ustad({ className = "" }: { className?: string }) {
         strokeLinejoin="round"
       />
       <path d="M140 163 Q150 171 160 163" stroke={BROWN} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M125 47 Q108 56 106 78" stroke={FEZ} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <ellipse cx="106" cy="86" rx="5" ry="9" fill={FEZ} stroke={GOLD_DARK} strokeWidth="1.5" />
       <path d="M114 96 L121 46 Q150 32 179 46 L186 96 Z" fill={FEZ} stroke={GOLD_DARK} strokeWidth="3" strokeLinejoin="round" />
       <path d="M108 92 Q150 80 192 92 L192 102 Q150 116 108 102 Z" fill="#FFFFFF" stroke={GOLD} strokeWidth="3" strokeLinejoin="round" />
+      {/* Tassel, drawn over the fez: outlined cord from the crown, band, teardrop bundle with highlight and fringe */}
+      <path d="M144 38 Q114 42 106 70" stroke={GOLD_DARK} strokeWidth="5.5" strokeLinecap="round" fill="none" />
+      <path d="M144 38 Q114 42 106 70" stroke={FEZ} strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M106 72 C100 80 98 90 100 98 Q106 104 112 98 C114 90 112 80 106 72 Z" fill={FEZ} stroke={GOLD_DARK} strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M103 78 Q102 88 104 94" stroke="#F3978C" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+      <path d="M102 99 l-1 8 M106 101 v9 M110 99 l1 8" stroke={FEZ} strokeWidth="2" strokeLinecap="round" fill="none" />
+      <ellipse cx="106" cy="72" rx="4.5" ry="3" fill={GOLD} stroke={GOLD_DARK} strokeWidth="1.2" />
     </svg>
   );
 }
@@ -165,10 +170,14 @@ export function Chef({ className = "" }: { className?: string }) {
         strokeLinejoin="round"
       />
       <path d="M112 111 Q120 117 128 111" stroke={BROWN} strokeWidth="2.6" strokeLinecap="round" fill="none" />
-      <path d="M101 22 Q88 29 86 46" stroke={FEZ} strokeWidth="2.6" strokeLinecap="round" fill="none" />
-      <ellipse cx="86" cy="52" rx="4" ry="7" fill={FEZ} stroke={GOLD_DARK} strokeWidth="1.3" />
       <path d="M92 60 L97 21 Q120 10 143 21 L148 60 Z" fill={FEZ} stroke={GOLD_DARK} strokeWidth="2.6" strokeLinejoin="round" />
       <path d="M88 57 Q120 47 152 57 L152 64 Q120 75 88 64 Z" fill="#FFFFFF" stroke={GOLD} strokeWidth="2.6" strokeLinejoin="round" />
+      <path d="M115 15 Q92 18 86 40" stroke={GOLD_DARK} strokeWidth="4.4" strokeLinecap="round" fill="none" />
+      <path d="M115 15 Q92 18 86 40" stroke={FEZ} strokeWidth="2.4" strokeLinecap="round" fill="none" />
+      <path d="M86 41 C82 47.5 80 55 81.6 61.4 Q86 66 91 61.4 C92.4 55 91 47.5 86 41 Z" fill={FEZ} stroke={GOLD_DARK} strokeWidth="1.3" strokeLinejoin="round" />
+      <path d="M84 46 Q83 54 85 58" stroke="#F3978C" strokeWidth="1.3" strokeLinecap="round" fill="none" />
+      <path d="M83 62 l-1 6 M86 63 v7 M89 62 l1 6" stroke={FEZ} strokeWidth="1.6" strokeLinecap="round" fill="none" />
+      <ellipse cx="86" cy="41" rx="3.5" ry="2.3" fill={GOLD} stroke={GOLD_DARK} strokeWidth="1" />
     </svg>
   );
 }
