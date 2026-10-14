@@ -40,8 +40,8 @@ export default function Services() {
             </Reveal>
           ))}
 
-          <Reveal className="gu-card box-border flex min-h-[300px] flex-col justify-between gap-5 rounded-[28px] border border-saffron bg-saffron p-8 text-ink">
-            <a href="#contactus" className="flex h-full flex-col justify-between gap-5 no-underline text-ink">
+          <Reveal className="gu-card box-border flex flex-col justify-between gap-5 rounded-[28px] border border-saffron bg-saffron p-8 text-ink sm:col-span-2 xl:col-span-3">
+            <a href="#contactus" className="flex h-full flex-col justify-between gap-5 no-underline text-ink sm:flex-row sm:items-center">
               <span className="font-display text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[38px]">Planning something? Get in touch.</span>
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-saffron">
                 <ArrowIcon />

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E2CF"/><stop offset="1" stop-color="#EBD3BD"/></linearGradient>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCE6F0"/><stop offset="1" stop-color="#C9D7E6"/></linearGradient>
 <radialGradient id="r" cx="0.65" cy="0.35" r="0.6"><stop offset="0" stop-color="#F2A93B" stop-opacity="0.55"/><stop offset="1" stop-color="#F2A93B" stop-opacity="0"/></radialGradient></defs>
 <rect width="1200" height="800" fill="url(#g)"/><rect width="1200" height="800" fill="url(#r)"/>
-<text x="600" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="30" fill="#4F5260" opacity="0.7">Photo: camp dining hall</text>
+<text x="600" y="400" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="30" fill="#4F5260" opacity="0.7">Photo: corporate dinner setup</text>
 </svg>

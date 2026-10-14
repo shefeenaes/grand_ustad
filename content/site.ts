@@ -3,10 +3,10 @@
 export const site = {
   name: "Grand Ustad",
   legalName: "Grand Ustad Hospitality Group",
-  tagline: "Restaurant and Catering Services",
+  tagline: "Events, Catering and Fine Dining",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.grandustad.com",
   description:
-    "Grand Ustad Hospitality Group — restaurant and catering services in Abu Dhabi, UAE. Mega outdoor events, labour camp catering, facility management, industrial catering and fine dine restaurants.",
+    "Grand Ustad Hospitality Group — events, catering and fine dining in Abu Dhabi, UAE. Mega outdoor events, wedding and corporate events, event management and decor, party and meal orders, and a fine dining restaurant.",
   phone: "+971 52 207 7662",
   phoneHref: "+971522077662",
   whatsapp: "971522077662",
@@ -27,7 +27,7 @@ export const site = {
   ],
   about: [
     "Welcome to Grand Ustad Hospitality Group, where we open our doors to all with a steadfast commitment to delivering unparalleled hospitality services. With two decades of dedication and unwavering determination, we have successfully expanded our presence across the United Arab Emirates.",
-    "Our journey has been defined by a relentless pursuit of excellence, transforming Grand Ustad into a renowned and respected brand throughout the UAE. From our beginnings in Catering Services and Fine Dining Restaurants to offering Catering-related Consultancy services, we have continuously evolved to meet the ever-changing needs of our valued patrons.",
+    "Our journey has been defined by a relentless pursuit of excellence, transforming Grand Ustad into a renowned and respected brand throughout the UAE. As a sister company of Golden Globe, we have grown from our beginnings in catering and fine dining into a full-service events company, delivering mega outdoor events, weddings, corporate functions, event management and decor, alongside party and meal orders for every occasion.",
     "As we continue to grow and adapt, we have extended our reach into diverse sectors, driven by our passion for innovation and customer satisfaction. Grand Ustad Hospitality Group is proudly headquartered in Abu Dhabi, UAE, serving as a beacon of hospitality excellence in this dynamic and thriving region.",
   ],
   services: [
@@ -36,45 +36,54 @@ export const site = {
       title: "Mega Outdoor Events",
       icon: "tent",
       image: "/images/service-events.svg",
-      imageAlt: "Outdoor wedding tent set up by Grand Ustad",
+      imageAlt: "Large outdoor event tent set up by Grand Ustad",
       description:
-        "Experience the epitome of outdoor weddings with our comprehensive event services. Our Mega Outdoor Wedding Events package includes luxurious tents that create a captivating atmosphere, state-of-the-art screens for multimedia presentations, and all the facilities you need to host a flawless celebration amidst breathtaking natural settings. Your special day will be etched in the memories of all who attend.",
+        "Host grand celebrations under the open sky with our Mega Outdoor Events. We provide luxurious tents, stage and lighting, state-of-the-art screens for multimedia presentations, and every facility needed to welcome hundreds or thousands of guests. From festivals and community gatherings to large-scale celebrations, we handle the setup, catering and coordination so your event runs flawlessly from start to finish.",
     },
     {
-      slug: "labour-camp-catering",
-      title: "Labour Camp Catering",
-      icon: "dish",
-      image: "/images/service-camp.svg",
-      imageAlt: "Labour camp dining hall served by Grand Ustad",
+      slug: "wedding-events",
+      title: "Wedding Events",
+      icon: "rings",
+      image: "/images/service-wedding.svg",
+      imageAlt: "Elegant wedding reception setup by Grand Ustad",
       description:
-        "Our commitment to worker welfare shines through our Labour Camp Catering services. Beyond nourishing laborers with balanced and wholesome meals, we offer comprehensive support. For both junior and senior staff, we provide comfortable accommodations, maintain cleanliness through dedicated housekeeping, and ensure convenience with laundry services. We strive to enhance their well-being, recognizing the importance of a holistic approach to their quality of life.",
+        "Celebrate your special moments with our bespoke wedding event services, designed to make every occasion truly unforgettable. From intimate pre-wedding functions and traditional ceremonies to grand wedding receptions, we help bring your vision to life with beautiful setups, exceptional catering, and thoughtful attention to every detail. Whether it is a traditional celebration or a contemporary wedding, we create a warm, elegant, and memorable experience for you and your guests.",
     },
     {
-      slug: "facility-management",
-      title: "Facility Management",
+      slug: "corporate-events",
+      title: "Corporate Events",
+      icon: "briefcase",
+      image: "/images/service-corporate.svg",
+      imageAlt: "Corporate dinner setup by Grand Ustad",
+      description:
+        "Make every corporate gathering a memorable experience with our comprehensive corporate event services. From business meetings and conferences to annual celebrations, product launches, and corporate dinners, we bring every occasion to life with seamless planning, elegant setups, and exceptional catering. Whether you are hosting an intimate business gathering or a large-scale corporate event, we ensure every detail reflects professionalism, quality, and excellence.",
+    },
+    {
+      slug: "event-management-decor",
+      title: "Event Management & Decor",
       icon: "gear",
-      image: "/images/service-facility.svg",
-      imageAlt: "Grand Ustad facility management team on site",
+      image: "/images/service-decor.svg",
+      imageAlt: "Stage and floral decor designed by Grand Ustad",
       description:
-        "Elevate your facility's performance with our Facility Management services. We take pride in optimizing every aspect of your space's operations, from maintenance to security, ensuring a seamless, efficient, and secure environment for your business to thrive.",
+        "Leave the planning to us. Our event management team takes care of everything from concept and scheduling to vendors, staffing and on-the-day coordination. Paired with our in-house decor service, including stage design, floral arrangements, lighting and themed table settings, we transform any venue into a space that reflects your style and the spirit of your occasion.",
     },
     {
-      slug: "industrial-catering",
-      title: "Industrial Catering",
+      slug: "party-meal-orders",
+      title: "Party & Meal Orders",
       icon: "trays",
-      image: "/images/service-industrial.svg",
-      imageAlt: "Industrial catering kitchen line at Grand Ustad",
+      image: "/images/service-orders.svg",
+      imageAlt: "Catered party trays prepared by Grand Ustad",
       description:
-        "Our commitment to Industrial Catering goes far beyond simply providing meals; it's about enhancing productivity and well-being in industrial settings for all levels of your workforce, including senior staff, junior staff, and laborers. We ensure that everyone is fueled with nutritious and delicious meals. Moreover, we understand the importance of a comfortable dining environment equipped with both gas and electrical facilities. This not only boosts physical vitality but also contributes to overall employee satisfaction, reinforcing their dedication to your company's success.",
+        "Freshly prepared food, delivered when and where you need it. We take corporate party orders, office lunches, family get-togethers and bulk meal orders of any size, with menus tailored to your guests and your budget. Every order is cooked in our own kitchen with the same care as our restaurant, and delivered hot and on time.",
     },
     {
-      slug: "fine-dine-restaurants",
-      title: "Fine Dine Restaurants",
+      slug: "fine-dining-restaurant",
+      title: "Fine Dining Restaurant",
       icon: "cloche",
       image: "/images/service-finedine.svg",
-      imageAlt: "Plated fine dining dish at a Grand Ustad restaurant",
+      imageAlt: "Plated fine dining dish at the Grand Ustad restaurant",
       description:
-        "Step into a world of culinary sophistication at our Fine Dine Restaurants. Each visit is a gastronomic adventure, where masterfully crafted dishes meet an ambiance of elegance. From the first bite to the final sip, indulge in a symphony of flavors that transform dining into an unforgettable experience.",
+        "Step into a world of culinary sophistication at our Fine Dining Restaurant. Each visit is a gastronomic adventure, where masterfully crafted dishes meet an ambiance of elegance. From the first bite to the final sip, indulge in a symphony of flavors that transform dining into an unforgettable experience.",
     },
   ],
   gallery: [
@@ -86,12 +95,11 @@ export const site = {
   contact: {
     eyebrow: "Contact us",
     title: "Send us a message",
-    text: "Tell us about your event, camp or facility and our team will come back to you within one working day.",
-  },
-  newsletter: {
-    title: "Join our family",
-    text: "Sign up to get all the latest news, website updates, offers and promos.",
+    text: "Tell us about your event, wedding or order and our team will come back to you within one working day.",
   },
 } as const;
 
 export type Service = (typeof site.services)[number];
+
+/** Keeps place names like "Abu Dhabi" from splitting across lines. */
+export const keepTogether = (text: string) => text.replace(/Abu Dhabi/g, "Abu\u00A0Dhabi");

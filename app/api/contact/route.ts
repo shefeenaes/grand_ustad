@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 /**
- * Receives contact form and newsletter submissions.
+ * Receives contact form submissions.
  * By default it logs the message on the server. Set CONTACT_WEBHOOK_URL in .env.local
  * to forward submissions (e.g. to an n8n / Zapier / Make webhook that emails you).
  */

@@ -196,12 +196,21 @@ export function ServiceIcon({ kind }: { kind: string }) {
           <path className="gu-flag" d="M24 4 L36 7 L24 10 Z" fill={CHILI} />
         </svg>
       );
-    case "dish":
+    case "rings":
       return (
         <svg {...common}>
-          <Steam paths={["M14 20c-3-4 3-7 0-11", "M24 18c-3-4 3-7 0-11", "M34 20c-3-4 3-7 0-11"]} width={2.5} />
-          <path d="M6 24 H42 L38 36 H10 Z" fill={SAFFRON} />
-          <rect x="4" y="36" width="40" height="6" rx="3" fill={INK} />
+          <circle cx="18" cy="29" r="11" fill="none" stroke={SAFFRON} strokeWidth="4" />
+          <circle cx="30" cy="29" r="11" fill="none" stroke={INK} strokeWidth="4" />
+          <path className="gu-flag" d="M30 18 L26 12 L30 6 L34 12 Z" fill={CHILI} />
+        </svg>
+      );
+    case "briefcase":
+      return (
+        <svg {...common}>
+          <path d="M18 14 V9 a2 2 0 0 1 2-2 h8 a2 2 0 0 1 2 2 V14" fill="none" stroke={INK} strokeWidth="3" />
+          <rect x="5" y="14" width="38" height="26" rx="4" fill={SAFFRON} />
+          <rect x="5" y="24" width="38" height="4" fill={INK} />
+          <rect x="21" y="22" width="6" height="8" rx="1.5" fill={CHILI} />
         </svg>
       );
     case "gear":
@@ -292,14 +301,6 @@ export function ArrowIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg aria-hidden="true" className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M7 17L17 7M9 7h8v8" />
-    </svg>
-  );
-}
-
-export function SendIcon() {
-  return (
-    <svg aria-hidden="true" className="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
     </svg>
   );
 }

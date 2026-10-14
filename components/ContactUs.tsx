@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { site, keepTogether } from "@/content/site";
 import Reveal from "./Reveal";
 import { ContactForm } from "./ContactForms";
 import { Chef, PinIcon, MailIcon, PhoneIcon, WhatsAppIcon, ArrowIcon } from "./Illustrations";
@@ -45,11 +45,11 @@ export default function ContactUs() {
             <span aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-16 -z-10 h-64 w-64 rounded-full bg-chili/20 blur-3xl" />
             <div className="flex flex-col gap-2 px-3 pt-2 sm:px-4">
               <span className="text-[13px] font-bold uppercase tracking-[0.18em] text-saffron">Reach us</span>
-              <h3 className="m-0 font-display text-[26px] font-bold leading-tight tracking-tight">We&rsquo;re in Musaffah, Abu Dhabi</h3>
+              <h3 className="m-0 font-display text-[26px] font-bold leading-tight tracking-tight">We&rsquo;re in Musaffah, Abu&nbsp;Dhabi</h3>
             </div>
             <div className="flex flex-col gap-1">
               <Row href={mapsHref} external icon={<PinIcon />} title="Address">
-                {site.address}
+                {keepTogether(site.address)}
               </Row>
               <Row href={`mailto:${site.email}`} icon={<MailIcon />} title="Email">
                 {site.email}

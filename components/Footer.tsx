@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { site } from "@/content/site";
+import { site, keepTogether } from "@/content/site";
 import Reveal from "./Reveal";
-import { NewsletterForm } from "./ContactForms";
 import { PinIcon, MailIcon, PhoneIcon } from "./Illustrations";
 
 function ContactLine({ icon, href, children, className = "" }: { icon: React.ReactNode; href?: string; children: React.ReactNode; className?: string }) {
@@ -31,14 +30,12 @@ export default function Footer() {
       <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#F2A93B,#E3452F_55%,#F2A93B)]" />
       <div className="mx-auto flex max-w-[1320px] flex-col gap-10 px-5 pb-8 pt-14 md:gap-14 md:px-10 md:pt-20">
         <Reveal className="grid gap-10 md:grid-cols-[1.4fr_0.8fr_1fr] md:gap-12">
-          {/* Brand + newsletter */}
+          {/* Brand */}
           <div className="flex max-w-[520px] flex-col gap-4">
             <a href="#banner" aria-label={`${site.name} — home`} className="flex items-center no-underline">
               <Image src="/images/logo-mark-hd.png" alt={site.name} width={862} height={593} quality={95} sizes="280px" className="gu-logo-img h-[72px] w-auto" />
             </a>
-            <h2 className="m-0 text-[32px] font-extrabold leading-none tracking-[-0.03em] md:text-[36px]">{site.newsletter.title}</h2>
-            <p className="m-0 text-base leading-relaxed text-muted">{site.newsletter.text}</p>
-            <NewsletterForm />
+            <p className="m-0 text-base leading-relaxed text-muted">{site.tagline} in Abu&nbsp;Dhabi, UAE.</p>
           </div>
 
           {/* Explore (desktop only) */}
@@ -66,7 +63,7 @@ export default function Footer() {
                 {site.email}
               </ContactLine>
               <ContactLine icon={<PinIcon />} className="hidden md:flex">
-                {site.address}
+                {keepTogether(site.address)}
               </ContactLine>
             </div>
           </address>
@@ -77,7 +74,7 @@ export default function Footer() {
           <span className="hidden items-center gap-2 md:flex">
             Made with
             <span aria-label="love" className="text-chili">&#9829;</span>
-            in Abu Dhabi
+            in Abu&nbsp;Dhabi
           </span>
         </div>
       </div>

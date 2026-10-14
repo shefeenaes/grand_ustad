@@ -27,11 +27,12 @@ export const metadata: Metadata = {
   keywords: [
     "Grand Ustad",
     "catering services Abu Dhabi",
-    "labour camp catering UAE",
-    "industrial catering Abu Dhabi",
-    "outdoor event catering",
-    "facility management Abu Dhabi",
-    "restaurant Musaffah",
+    "mega outdoor events UAE",
+    "wedding events Abu Dhabi",
+    "corporate events Abu Dhabi",
+    "event management and decor Abu Dhabi",
+    "party and meal orders Abu Dhabi",
+    "fine dining restaurant Musaffah",
   ],
   alternates: { canonical: "/" },
   openGraph: {

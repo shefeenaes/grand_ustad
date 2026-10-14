@@ -47,7 +47,7 @@ Add your real logo as `public/images/logo.svg` and swap the "GU" mark in `compon
 
 ## Forms
 
-- **Get in Touch** and **Join our family** post to `/api/contact`. Without configuration the server logs submissions.
+- The **Contact us** form posts to `/api/contact`. Without configuration the server logs submissions.
   Set `CONTACT_WEBHOOK_URL` in `.env.local` to forward them to an email/CRM webhook (n8n, Zapier, Make, ERPNext).
 - **Contact Us** opens WhatsApp or your email client with the message pre-filled.
 
