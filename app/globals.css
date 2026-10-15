@@ -8,11 +8,12 @@
   --color-faint: #6b6e7a;
   --color-line: #e3e4e8;
   --color-field: #d3d5dd;
-  --color-saffron: #f2a93b;
-  --color-saffron-deep: #8c5e12;
+  --color-brand: #324a48;
+  --color-brand-deep: #0b2a1f;
+  --color-brand-light: #4f6b68;
+  --color-cream: #e9deca;
+  --color-cream-deep: #d9cbb0;
   --color-chili: #e3452f;
-  --color-copper: #c9743a;
-  --color-copper-light: #e0905a;
   --color-skin: #f6e2cf;
   --font-display: var(--font-outfit), "Segoe UI", system-ui, sans-serif;
   --font-body: var(--font-figtree), "Segoe UI", system-ui, sans-serif;
@@ -47,7 +48,7 @@ h3 {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-saffron);
+  outline: 3px solid var(--color-brand);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -95,6 +96,10 @@ h3 {
   0%, 100% { transform: translate(0, 0) rotate(0); }
   50% { transform: translate(14px, -22px) rotate(14deg); }
 }
+@keyframes gu-tumble {
+  0%, 100% { transform: translate(0, 0) rotate(-8deg); }
+  50% { transform: translate(10px, -26px) rotate(14deg); }
+}
 @keyframes gu-sizzle {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
@@ -126,6 +131,7 @@ h3 {
 .gu-cloche { animation: gu-lift 2.8s ease-in-out infinite; transform-box: fill-box; }
 .gu-wave { animation: gu-wave 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom left; }
 .gu-drift { animation: gu-drift 7s ease-in-out infinite; }
+.gu-tumble { animation: gu-tumble 9s ease-in-out infinite; }
 .gu-sizzle { animation: gu-sizzle 0.5s ease-in-out infinite; transform-box: fill-box; }
 .gu-blink { animation: gu-blink 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 
@@ -154,19 +160,20 @@ h3 {
 }
 .gu-nav.is-scrolled .gu-navbar {
   background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(242, 169, 59, 0.35);
+  border-color: rgba(50, 74, 72, 0.35);
   box-shadow: 0 14px 40px rgba(26, 27, 34, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
 }
 .gu-logo-img { transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .gu-brand:hover .gu-logo-img { transform: scale(1.04); }
-/* Links sit directly on the bar; the active section gets a saffron pill */
+/* Links sit directly on the bar; the active section gets a green pill */
 .gu-navlink { transition: color 0.25s, background-color 0.25s; }
-.gu-navlink:hover { color: var(--color-ink); background: rgba(242, 169, 59, 0.15); }
+.gu-navlink:hover { color: var(--color-ink); background: rgba(50, 74, 72, 0.1); }
 .gu-navlink.is-active {
-  background: var(--color-saffron);
-  box-shadow: 0 6px 14px rgba(242, 169, 59, 0.4);
+  color: #fff;
+  background: var(--color-brand);
+  box-shadow: 0 6px 14px rgba(50, 74, 72, 0.35);
 }
-.gu-contact { background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-copper-light) 100%); }
+.gu-contact { background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-deep) 100%); }
 /* Hamburger → X */
 .gu-burger-line {
   position: absolute;
@@ -205,7 +212,7 @@ h3 {
   position: absolute;
   inset: 0;
   border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%;
-  background: radial-gradient(circle at 30% 30%, rgba(242, 169, 59, 0.45), rgba(242, 169, 59, 0.12) 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(233, 222, 202, 0.95), rgba(50, 74, 72, 0.12) 70%);
   animation: gu-blob 9s ease-in-out infinite;
 }
 @keyframes gu-blob {
@@ -215,12 +222,12 @@ h3 {
 
 /* Hover polish */
 .gu-card { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.5s, border-color 0.5s; }
-.gu-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lift); border-color: var(--color-saffron); }
+.gu-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lift); border-color: var(--color-brand); }
 .gu-img { overflow: hidden; }
 .gu-img .gu-zoom { transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .gu-img:hover .gu-zoom { transform: scale(1.06); }
 .gu-btn { position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-.gu-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(242, 169, 59, 0.35); }
+.gu-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(50, 74, 72, 0.35); }
 .gu-btn::after {
   content: "";
   position: absolute;
@@ -241,16 +248,16 @@ h3 {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--color-saffron);
+  background: var(--color-brand);
   transition: width 0.35s;
 }
 .gu-link:hover::after { width: 100%; }
 .gu-field { transition: border-color 0.3s, box-shadow 0.3s; }
-.gu-field:focus { outline: none; border-color: var(--color-saffron); box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.2); }
+.gu-field:focus { outline: none; border-color: var(--color-brand); box-shadow: 0 0 0 4px rgba(50, 74, 72, 0.2); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .gu-up, .gu-float, .gu-float-b, .gu-glow, .gu-ticker, .gu-spin, .gu-steam path, .gu-flag, .gu-gear, .gu-cloche, .gu-wave, .gu-drift, .gu-sizzle, .gu-blink {
+  .gu-up, .gu-float, .gu-float-b, .gu-glow, .gu-ticker, .gu-spin, .gu-steam path, .gu-flag, .gu-gear, .gu-cloche, .gu-wave, .gu-drift, .gu-tumble, .gu-sizzle, .gu-blink {
     animation: none;
   }
   .gu-reveal { opacity: 1; transform: none; transition: none; }

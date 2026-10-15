@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   keywords: [
     "Grand Ustad",
     "catering services Abu Dhabi",
-    "mega outdoor events UAE",
+    "outdoor events UAE",
     "wedding events Abu Dhabi",
     "corporate events Abu Dhabi",
     "event management and decor Abu Dhabi",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f7f4",
+  themeColor: "#324a48",
   width: "device-width",
   initialScale: 1,
 };

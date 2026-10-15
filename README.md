@@ -30,20 +30,20 @@ Deploy to Vercel, Netlify, or Cloudflare Pages by connecting the repository, or 
 |---|---|
 | All website text (about, services, address, phone, email) | `content/site.ts` |
 | Page sections | `components/*.tsx` |
-| Animated illustrations (Ustad chef, handi, icons) | `components/Illustrations.tsx` |
-| Animations and theme colours | `app/globals.css` |
+| Animated illustrations (Ustad chef, rotating badge, icons) | `components/Illustrations.tsx` |
+| Animations and theme colours (brand green `#324A48`, deep green `#0B2A1F`, cream `#E9DECA`) | `app/globals.css` |
 | SEO metadata, fonts, JSON-LD schema | `app/layout.tsx` |
 | Open Graph share image (auto-generated) | `app/opengraph-image.tsx` |
 | Sitemap, robots, web manifest | `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` |
 | Contact form (EmailJS) | `components/ContactForms.tsx`, `docs/emailjs-contact-template.html` |
-| Placeholder images (replace with real photos) | `public/images/*.svg` |
+| Logo, sticker, photos and 3D ingredient sprites | `public/images/` |
 
-## Replace the placeholder images
+## Images
 
-Drop your photos into `public/images/` and update the paths in `content/site.ts`
-(or keep the same names and use `.jpg`/`.webp`, then change the extension in `site.ts`).
-Recommended sizes: hero 1200×800, services 1200×800, gallery 1200×1200 / 1600×800.
-Add your real logo as `public/images/logo.svg` and swap the "GU" mark in `components/Nav.tsx` and `components/About.tsx`.
+- Logo wordmark: `public/images/GU_logo.png` (nav, footer). Round sticker: `public/images/stickerr.png` (about card, hero tile, OG image, favicon/app icons).
+- Hero, service and gallery photos are JPEGs referenced from `components/Hero.tsx` and `content/site.ts`; swap a file and keep the path, or change the path in `site.ts`.
+  Recommended sizes: hero 900×1200 / 1200×900, services 1200×800, gallery 1600×1600 / 1600×900.
+- `spice-*.png` are transparent 512×512 sprites that drift around the hero.
 
 ## Forms
 

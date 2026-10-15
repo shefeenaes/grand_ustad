@@ -6,7 +6,7 @@ import { PinIcon, MailIcon, PhoneIcon } from "./Illustrations";
 function ContactLine({ icon, href, children, className = "" }: { icon: React.ReactNode; href?: string; children: React.ReactNode; className?: string }) {
   const inner = (
     <>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-saffron-deep shadow-[0_4px_12px_rgba(26,27,34,0.08)] [&_svg]:h-[18px] [&_svg]:w-[18px]">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-brand shadow-[0_4px_12px_rgba(26,27,34,0.08)] [&_svg]:h-[18px] [&_svg]:w-[18px]">
         {icon}
       </span>
       <span className="leading-snug">{children}</span>
@@ -26,14 +26,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative bg-[#ECEDE9]">
-      {/* Saffron accent line */}
-      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#F2A93B,#E3452F_55%,#F2A93B)]" />
+      {/* Brand accent line */}
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#324A48,#0B2A1F_55%,#324A48)]" />
       <div className="mx-auto flex max-w-[1320px] flex-col gap-10 px-5 pb-8 pt-14 md:gap-14 md:px-10 md:pt-20">
         <Reveal className="grid gap-10 md:grid-cols-[1.4fr_0.8fr_1fr] md:gap-12">
           {/* Brand */}
           <div className="flex max-w-[520px] flex-col gap-4">
             <a href="#banner" aria-label={`${site.name} — home`} className="flex items-center no-underline">
-              <Image src="/images/logo-mark-hd.png" alt={site.name} width={862} height={593} quality={95} sizes="280px" className="gu-logo-img h-[72px] w-auto" />
+              <Image src="/images/GU_logo.png" alt={site.name} width={2449} height={785} quality={95} sizes="230px" className="gu-logo-img h-[72px] w-auto" />
             </a>
             <p className="m-0 text-base leading-relaxed text-muted">{site.tagline} in Abu&nbsp;Dhabi, UAE.</p>
           </div>
@@ -73,7 +73,7 @@ export default function Footer() {
           <span>&copy; {year} {site.legalName}. All rights reserved.</span>
           <span className="hidden items-center gap-2 md:flex">
             Made with
-            <span aria-label="love" className="text-chili">&#9829;</span>
+            <span aria-label="love" className="text-brand">&#9829;</span>
             in Abu&nbsp;Dhabi
           </span>
         </div>

@@ -48,19 +48,19 @@ export default function Nav() {
   return (
     <header className={`gu-nav sticky top-0 z-40 ${scrolled || open ? "is-scrolled" : ""}`}>
       {/* Brand accent stripe, mirrors the footer */}
-      <span aria-hidden="true" className="gu-nav-stripe block h-[3px] bg-[linear-gradient(90deg,#F2A93B,#E3452F_55%,#F2A93B)]" />
+      <span aria-hidden="true" className="gu-nav-stripe block h-[3px] bg-[linear-gradient(90deg,#324A48,#0B2A1F_55%,#324A48)]" />
 
       <div className="gu-nav-shell px-3 md:px-6">
         <nav aria-label="Main" className="gu-navbar flex items-center justify-between gap-5 px-3 py-3 md:px-5 md:py-3">
           <a href="#banner" aria-label={`${site.name} — home`} className="gu-up gu-brand ml-3 flex items-center no-underline md:ml-8">
             <Image
-              src="/images/logo-mark-hd.png"
+              src="/images/GU_logo.png"
               alt={site.name}
-              width={862}
-              height={593}
+              width={2449}
+              height={785}
               priority
               quality={95}
-              sizes="(max-width: 768px) 220px, 320px"
+              sizes="(max-width: 768px) 170px, 230px"
               className="gu-logo-img h-[52px] w-auto md:h-[72px]"
             />
           </a>
@@ -71,7 +71,7 @@ export default function Nav() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className={`gu-burger flex h-11 w-11 items-center justify-center rounded-full border border-saffron/40 bg-saffron/15 md:hidden ${open ? "is-open" : ""}`}
+            className={`gu-burger flex h-11 w-11 items-center justify-center rounded-full border border-brand/30 bg-brand/10 md:hidden ${open ? "is-open" : ""}`}
           >
             <span aria-hidden="true" className="relative block h-4 w-5">
               <span className="gu-burger-line top-0" />
@@ -87,16 +87,16 @@ export default function Nav() {
                   <a
                     href={l.href}
                     aria-current={active === l.href ? "location" : undefined}
-                    className={`gu-navlink rounded-full px-4 py-2 no-underline ${active === l.href ? "is-active text-ink" : "text-muted"}`}
+                    className={`gu-navlink rounded-full px-4 py-2 no-underline ${active === l.href ? "is-active" : "text-muted"}`}
                   >
                     {l.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <a href={contact.href} className="gu-btn gu-contact inline-flex h-12 items-center gap-2.5 rounded-full pl-6 pr-2 font-bold text-ink no-underline">
+            <a href={contact.href} className="gu-btn gu-contact inline-flex h-12 items-center gap-2.5 rounded-full pl-6 pr-2 font-bold text-white no-underline">
               {contact.label}
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-cream text-brand-deep">
                 <ArrowIcon className="h-4 w-4" />
               </span>
             </a>
@@ -108,7 +108,7 @@ export default function Nav() {
       <div id="mobile-menu" className={`gu-mobile-menu absolute inset-x-0 top-full md:hidden ${open ? "is-open" : ""}`} aria-hidden={!open}>
         {/* Collapsible wrapper carries no margin, so the closed menu is exactly 0px tall */}
         <div>
-        <div className="mx-4 mb-4 flex flex-col gap-1 rounded-[28px] border border-saffron/30 bg-white p-3 shadow-lift">
+        <div className="mx-4 mb-4 flex flex-col gap-1 rounded-[28px] border border-brand/20 bg-white p-3 shadow-lift">
           {links.map((l, i) => (
             <a
               key={l.href}
@@ -117,11 +117,11 @@ export default function Nav() {
               tabIndex={open ? 0 : -1}
               style={{ transitionDelay: open ? `${60 + i * 40}ms` : "0ms" }}
               className={`gu-mobile-item flex items-center justify-between rounded-2xl px-4 py-3 text-base font-semibold no-underline ${
-                active === l.href ? "bg-saffron/15 text-ink" : "text-muted"
+                active === l.href ? "bg-brand/10 text-ink" : "text-muted"
               }`}
             >
               {l.label}
-              <ArrowIcon className="h-4 w-4 text-saffron" />
+              <ArrowIcon className="h-4 w-4 text-brand" />
             </a>
           ))}
           <a
@@ -129,7 +129,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             tabIndex={open ? 0 : -1}
             style={{ transitionDelay: open ? `${60 + links.length * 40}ms` : "0ms" }}
-            className="gu-mobile-item gu-btn gu-contact mt-2 flex h-[52px] items-center justify-center gap-2 rounded-full text-base font-bold text-ink no-underline"
+            className="gu-mobile-item gu-btn gu-contact mt-2 flex h-[52px] items-center justify-center gap-2 rounded-full text-base font-bold text-white no-underline"
           >
             {contact.label}
             <ArrowIcon className="h-4 w-4" />
