@@ -12,6 +12,7 @@ export const site = {
   whatsapp: "971522077662",
   email: "grandustadrestaurant@gmail.com",
   address: "Building number 241, Ground floor ME 11, Musaffa, Abu Dhabi, UAE",
+  mapsUrl: "https://maps.app.goo.gl/zNRA5BD4CzyyZAVs7",
   addressParts: {
     street: "Building number 241, Ground floor ME 11",
     locality: "Musaffa",

@@ -21,7 +21,6 @@ function Row({ href, icon, title, children, external }: { href: string; icon: Re
 }
 
 export default function ContactUs() {
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address)}`;
   const waHref = `https://api.whatsapp.com/send?phone=${site.whatsapp}`;
   return (
     <section id="contactus" className="border-y border-line bg-white">
@@ -48,7 +47,7 @@ export default function ContactUs() {
               <h3 className="m-0 font-display text-[26px] font-bold leading-tight tracking-tight">We&rsquo;re in Musaffah, Abu&nbsp;Dhabi</h3>
             </div>
             <div className="flex flex-col gap-1">
-              <Row href={mapsHref} external icon={<PinIcon />} title="Address">
+              <Row href={site.mapsUrl} external icon={<PinIcon />} title="Address">
                 {keepTogether(site.address)}
               </Row>
               <Row href={`mailto:${site.email}`} icon={<MailIcon />} title="Email">
@@ -69,7 +68,7 @@ export default function ContactUs() {
                 WhatsApp us
               </a>
               <a
-                href={mapsHref}
+                href={site.mapsUrl}
                 target="_blank"
                 rel="noopener"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-5 text-[15px] font-bold text-white no-underline transition-colors hover:bg-white/10"

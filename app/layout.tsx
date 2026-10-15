@@ -76,6 +76,7 @@ const jsonLd = {
     addressRegion: site.addressParts.region,
     addressCountry: site.addressParts.country,
   },
+  hasMap: site.mapsUrl,
   areaServed: "United Arab Emirates",
   makesOffer: site.services.map((s) => ({
     "@type": "Offer",
