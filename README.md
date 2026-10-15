@@ -35,7 +35,7 @@ Deploy to Vercel, Netlify, or Cloudflare Pages by connecting the repository, or 
 | SEO metadata, fonts, JSON-LD schema | `app/layout.tsx` |
 | Open Graph share image (auto-generated) | `app/opengraph-image.tsx` |
 | Sitemap, robots, web manifest | `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` |
-| Contact-form endpoint | `app/api/contact/route.ts` |
+| Contact form (EmailJS) | `components/ContactForms.tsx`, `docs/emailjs-contact-template.html` |
 | Placeholder images (replace with real photos) | `public/images/*.svg` |
 
 ## Replace the placeholder images
@@ -47,13 +47,20 @@ Add your real logo as `public/images/logo.svg` and swap the "GU" mark in `compon
 
 ## Forms
 
-- The **Contact us** form posts to `/api/contact`. Without configuration the server logs submissions.
-  Set `CONTACT_WEBHOOK_URL` in `.env.local` to forward them to an email/CRM webhook (n8n, Zapier, Make, ERPNext).
-- **Contact Us** opens WhatsApp or your email client with the message pre-filled.
+The **Contact us** form sends email through [EmailJS](https://www.emailjs.com) (free plan: 200 emails/month).
+
+1. Sign up at emailjs.com and add an **Email Service** connected to the inbox that should receive enquiries.
+2. Create an **Email Template**. Paste the HTML from `docs/emailjs-contact-template.html` into its content
+   (Code editor) and copy the Subject / To / Reply To settings listed at the top of that file.
+3. Put the Service ID, Template ID and Public Key in `.env.local` (see `.env.example`) and in your hosting
+   provider's environment variables, then rebuild.
+4. Recommended: in EmailJS > Account > Security, restrict requests to your domain.
+
+Until the keys are set, submitting the form shows the "Couldn't send" message and logs the reason in the browser console.
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to your live domain so canonical links, sitemap and Open Graph tags are correct.
+Copy `.env.example` to `.env.local`, set `NEXT_PUBLIC_SITE_URL` to your live domain so canonical links, sitemap and Open Graph tags are correct, and fill in the EmailJS keys.
 
 ## Performance and SEO checklist built in
 
