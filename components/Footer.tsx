@@ -69,7 +69,7 @@ export default function Footer() {
             aria-hidden="true"
             lang="ar"
             dir="rtl"
-            className="font-arabic pointer-events-none absolute inset-0 flex select-none items-center justify-center whitespace-nowrap text-[64px] font-bold leading-none text-cream/[0.2] sm:text-[110px] lg:text-[150px]"
+            className="font-arabic pointer-events-none absolute inset-0 flex select-none items-center justify-center whitespace-nowrap text-[64px] font-bold leading-none text-cream opacity-20 sm:text-[110px] lg:text-[150px]"
           >
             {site.footer.watermark}
           </span>
