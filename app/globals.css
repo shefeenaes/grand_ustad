@@ -17,6 +17,8 @@
   --color-skin: #f6e2cf;
   --font-display: var(--font-outfit), "Segoe UI", system-ui, sans-serif;
   --font-body: var(--font-figtree), "Segoe UI", system-ui, sans-serif;
+  --font-accent: var(--font-instrument-serif), Georgia, serif;
+  --font-arabic: var(--font-cairo), "Segoe UI", "Noto Sans Arabic", sans-serif;
   --shadow-lift: 0 30px 60px rgba(26, 27, 34, 0.14);
   --shadow-card: 0 10px 24px rgba(26, 27, 34, 0.12);
 }
@@ -143,6 +145,19 @@ h3 {
 }
 .gu-reveal.is-visible { opacity: 1; transform: none; }
 
+/* Footer: the Ustad rises over the ledge, then his hands grab on */
+.gu-peek.gu-reveal { opacity: 1; transform: none; }
+.gu-peek-head { transform: translateY(105%); transition: transform 0.9s cubic-bezier(0.3, 1.5, 0.5, 1) 0.3s; }
+.gu-peek-hand { transform: scale(0); transition: transform 0.4s cubic-bezier(0.3, 1.8, 0.5, 1) 0.65s; }
+.gu-peek.is-visible .gu-peek-head,
+.gu-peek.is-visible .gu-peek-hand { transform: none; }
+
+/* Footer ingredients: grab and throw */
+.gu-toss { cursor: grab; will-change: transform; }
+.gu-toss img { filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.4)); transition: filter 0.2s; }
+.gu-toss.is-grabbed { cursor: grabbing; z-index: 1; }
+.gu-toss.is-grabbed img { filter: drop-shadow(0 28px 26px rgba(0, 0, 0, 0.45)); }
+
 /* ---------- Navigation ---------- */
 /* At the top: a full-width frosted bar with the brand stripe.
    Scrolled: the stripe tucks away and the bar condenses into a floating island. */
@@ -263,4 +278,5 @@ h3 {
   .gu-reveal { opacity: 1; transform: none; transition: none; }
   .gu-card, .gu-btn, .gu-img .gu-zoom, .gu-nav, .gu-navbar, .gu-nav-stripe, .gu-navlink, .gu-logo-img, .gu-mobile-menu, .gu-mobile-item, .gu-burger-line { transition: none; }
   .gu-blob::before { animation: none; }
+  .gu-peek-head, .gu-peek-hand { transform: none; transition: none; }
 }

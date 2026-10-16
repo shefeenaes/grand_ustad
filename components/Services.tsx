@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { site } from "@/content/site";
 import Reveal from "./Reveal";
-import { ServiceIcon, ArrowIcon } from "./Illustrations";
+import { ServiceIcon, ArrowIcon, UstadHead } from "./Illustrations";
 
 export default function Services() {
   return (
     <>
       <div className="mx-auto flex max-w-[1320px] items-center gap-[18px] px-5 md:px-10" aria-hidden="true">
         <span className="h-px flex-1 bg-line" />
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-card">
-          <Image src="/images/stickerr.png" alt="" width={1417} height={1417} sizes="44px" className="h-11 w-11" />
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-card">
+          <UstadHead className="h-[52px] w-auto" />
         </span>
         <span className="h-px flex-1 bg-line" />
       </div>

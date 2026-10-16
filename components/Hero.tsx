@@ -21,14 +21,14 @@ export default function Hero() {
         <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-6">
           <span className="gu-up gu-d1 inline-flex items-center gap-2.5 text-[13px] font-bold uppercase tracking-[0.18em] text-brand">
             <span className="h-0.5 w-[30px] bg-brand" />
-            {site.legalName}
+            {site.hero.eyebrow}
           </span>
           <h1 className="gu-up gu-d2 m-0 text-[64px] font-extrabold leading-[0.95] tracking-[-0.04em] sm:text-[84px] lg:text-[108px]">
-            Grand
-            <br />
-            Ustad
+            <span className="sr-only">{site.name}: </span>
+            {site.hero.lead}{" "}
+            <em className="font-accent text-[1.12em] font-normal tracking-[-0.01em] text-brand">{site.hero.accent}</em>
           </h1>
-          <p className="gu-up gu-d3 m-0 text-xl font-medium leading-snug text-muted sm:text-[26px]">{site.tagline}</p>
+          <p className="gu-up gu-d3 m-0 max-w-[520px] text-xl font-medium leading-snug text-muted sm:text-[24px]">{site.hero.subtitle}</p>
           <div className="gu-up gu-d4 flex flex-wrap gap-3.5 pt-2">
             <a
               href={`https://api.whatsapp.com/send?phone=${site.whatsapp}`}

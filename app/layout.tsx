@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Figtree } from "next/font/google";
+import { Outfit, Figtree, Instrument_Serif, Cairo } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -15,6 +15,23 @@ const figtree = Figtree({
   weight: ["400", "500", "600", "700"],
   variable: "--font-figtree",
   display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+// Footer watermark only, so it is not preloaded
+const cairo = Cairo({
+  subsets: ["arabic"],
+  weight: "700",
+  variable: "--font-cairo",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -87,7 +104,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${figtree.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${figtree.variable} ${instrumentSerif.variable} ${cairo.variable}`}>
       <body>
         <a
           href="#main"

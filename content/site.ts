@@ -4,6 +4,21 @@ export const site = {
   name: "Grand Ustad",
   legalName: "Grand Ustad Hospitality Group",
   tagline: "Events, Catering and Fine Dining",
+  /** "Ustad" means master; the hero plays on the name instead of repeating the logo. */
+  hero: {
+    eyebrow: "Events · Catering · Fine Dining",
+    lead: "Masters of the",
+    accent: "feast.",
+    subtitle: "Two decades of weddings, galas and grand gatherings across the UAE.",
+  },
+  /** Footer sign-off; the watermark is "Grand Ustad" in Arabic. */
+  footer: {
+    lead: "Let's make it a",
+    accent: "feast.",
+    cta: "Start planning on WhatsApp",
+    watermark: "جراند أستاد",
+    hint: "Go on, toss the onion.",
+  },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.grandustad.com",
   description:
     "Grand Ustad Hospitality Group — events, catering and fine dining in Abu Dhabi, UAE. Outdoor events, wedding and corporate events, event management and decor, party and meal orders, and a fine dining restaurant.",
