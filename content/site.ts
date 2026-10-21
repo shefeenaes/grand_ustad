@@ -11,12 +11,12 @@ export const site = {
     accent: "feast.",
     subtitle: "Two decades of weddings, galas and grand gatherings across the UAE.",
   },
-  /** Footer sign-off; the watermark is "Grand Ustad" in dotless Kufic-style Arabic (ح for ج, ٮ for ن/ت). */
+  /** Footer sign-off; the watermark is "Grand Ustad" in Arabic. */
   footer: {
     lead: "Let's make it a",
     accent: "feast.",
     cta: "Start planning on WhatsApp",
-    watermark: "حراٮد أسٮاد",
+    watermark: "جراند أستاذ",
     hint: "Go on, toss the onion.",
   },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.grandustad.com",
