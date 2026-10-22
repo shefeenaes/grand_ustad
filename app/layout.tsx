@@ -82,7 +82,7 @@ const jsonLd = {
   name: site.legalName,
   alternateName: site.name,
   url: site.url,
-  telephone: site.phone.replace(/\s/g, ""),
+  telephone: site.phones.map((p) => p.href),
   email: site.email,
   description: site.description,
   servesCuisine: ["Indian", "South Indian", "Kerala", "Multi-cuisine"],

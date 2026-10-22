@@ -24,7 +24,7 @@ export default async function OpenGraphImage() {
           <div style={{ fontSize: 96, fontWeight: 800, color: "#1A1B22", letterSpacing: -4, lineHeight: 1.02, marginTop: 12 }}>Grand Ustad</div>
           <div style={{ fontSize: 34, color: "#4F5260", marginTop: 14 }}>{site.tagline}</div>
           <div style={{ display: "flex", background: "#324A48", color: "#FFFFFF", padding: "14px 28px", borderRadius: 999, fontSize: 24, fontWeight: 700, alignSelf: "flex-start", marginTop: 36 }}>
-            Abu Dhabi, UAE · {site.phone}
+            Abu Dhabi, UAE · {site.phones[0].display}
           </div>
         </div>
       </div>

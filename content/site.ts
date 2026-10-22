@@ -22,8 +22,11 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.grandustad.com",
   description:
     "Grand Ustad Hospitality Group — events, catering and fine dining in Abu Dhabi, UAE. Outdoor events, wedding and corporate events, event management and decor, party and meal orders, and a fine dining restaurant.",
-  phone: "+971 52 207 7662",
-  phoneHref: "+971522077662",
+  /** The first number is the main line, used where only one fits (e.g. link previews). */
+  phones: [
+    { display: "+971 52 207 7662", href: "+971522077662" },
+    { display: "+971 54 454 5649", href: "+971544545649" },
+  ],
   whatsapp: "971522077662",
   email: "grandustadrestaurant@gmail.com",
   address: "Building number 241, Ground floor ME 11, Musaffa, Abu Dhabi, UAE",
@@ -96,15 +99,24 @@ export const site = {
       slug: "fine-dining-restaurant",
       title: "Fine Dining Restaurant",
       icon: "cloche",
-      image: "/images/indian-cuisine-food-table-restaurant.jpeg",
-      imageAlt: "Curries, biryani and breads served at the Grand Ustad restaurant",
+      image: "/images/restaurant-interior.jpeg",
+      imageAlt: "The Grand Ustad dining room with leather chairs, marble tables and warm wall lighting",
       description:
         "Step into a world of culinary sophistication at our Fine Dining Restaurant. Each visit is a gastronomic adventure, where masterfully crafted dishes meet an ambiance of elegance. From the first bite to the final sip, indulge in a symphony of flavors that transform dining into an unforgettable experience.",
     },
   ],
+  /** Listed in mosaic order. `size` sets the tile: feature is 2×2, tall is 1×2, wide is 2×1. `focus` keeps the food in frame when a tile crops. */
   gallery: [
-    { src: "/images/visual-catering-setup-corporate-event-with-various-food-stations.jpeg", alt: "Buffet food stations at a corporate event catered by Grand Ustad" },
-    { src: "/images/indian-cuisine-food-table-restaurant.jpeg", alt: "A table of curries, biryani and breads at the Grand Ustad restaurant" },
+    { src: "/images/restaurant-interior.jpeg", size: "feature", alt: "The Grand Ustad dining room set for service" },
+    { src: "/images/gallery-chicken-lollipop.jpeg", size: "tall", alt: "Glazed chicken lollipops on spring onion curls, scattered with sesame" },
+    { src: "/images/gallery-crispy-burger.jpeg", size: "tall", alt: "Double-stacked crispy chicken burger with lettuce, cheese and spicy mayo" },
+    { src: "/images/gallery-caesar-salad.jpeg", size: "tall", alt: "Chicken Caesar salad with shaved parmesan" },
+    { src: "/images/gallery-spread.jpeg", size: "tall", alt: "A full Grand Ustad spread of mixed grills, burger, sizzler, noodles, salads and a jug of blue lemonade" },
+    { src: "/images/visual-catering-setup-corporate-event-with-various-food-stations.jpeg", size: "wide", alt: "Buffet food stations at a corporate event catered by Grand Ustad" },
+    { src: "/images/indian-cuisine-food-table-restaurant.jpeg", size: "wide", alt: "A table of curries, biryani and breads at the Grand Ustad restaurant" },
+    { src: "/images/gallery-rice-platter.jpeg", size: "tall", alt: "Red-masala meat over long-grain rice with a green chilli" },
+    { src: "/images/gallery-shake.jpeg", size: "tall", alt: "A tall glass of creamy shake drizzled with honey" },
+    { src: "/images/gallery-biryani.jpeg", size: "feature", focus: "center 62%", alt: "Biryani with pappadam, pickle, onion salad and raita" },
   ],
   contact: {
     eyebrow: "Contact us",

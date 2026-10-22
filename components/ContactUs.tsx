@@ -1,22 +1,25 @@
+import Image from "next/image";
 import { site, keepTogether } from "@/content/site";
 import Reveal from "./Reveal";
 import { ContactForm } from "./ContactForms";
 import { Chef, PinIcon, MailIcon, PhoneIcon, WhatsAppIcon, ArrowIcon } from "./Illustrations";
 
-function Row({ href, icon, title, children, external }: { href: string; icon: React.ReactNode; title: string; children: React.ReactNode; external?: boolean }) {
+/** A contact line; without `href` it is a plain row whose children carry their own links. */
+function Row({ href, icon, title, children, external }: { href?: string; icon: React.ReactNode; title: string; children: React.ReactNode; external?: boolean }) {
+  const Tag = href ? "a" : "div";
   return (
-    <a
+    <Tag
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener" : undefined}
-      className="group flex items-start gap-3 rounded-2xl px-1 py-3 text-white no-underline transition-colors hover:bg-white/5 sm:gap-4 sm:p-4"
+      className={`group flex items-start gap-3 rounded-2xl px-1 py-3 text-white no-underline sm:gap-4 sm:p-4 ${href ? "transition-colors hover:bg-white/5" : ""}`}
     >
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream text-brand-deep transition-transform group-hover:scale-105 sm:h-11 sm:w-11">{icon}</span>
       <span className="flex min-w-0 flex-col gap-1">
         <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-white/55">{title}</span>
         <span className="text-[15px] leading-snug text-white/90 [overflow-wrap:anywhere] sm:text-[16px]">{children}</span>
       </span>
-    </a>
+    </Tag>
   );
 }
 
@@ -46,6 +49,16 @@ export default function ContactUs() {
               <span className="text-[13px] font-bold uppercase tracking-[0.18em] text-cream">Reach us</span>
               <h3 className="m-0 font-display text-[26px] font-bold leading-tight tracking-tight">We&rsquo;re in Musaffah, Abu&nbsp;Dhabi</h3>
             </div>
+            {/* The storefront, so guests recognise the green signboard when they arrive */}
+            <div className="gu-img relative mx-3 aspect-[16/10] overflow-hidden rounded-2xl border border-white/15 sm:mx-4">
+              <Image
+                src="/images/restaurant-storefront.jpeg"
+                alt="The Grand Ustad restaurant in Musaffah, with its green Grand Ustad signboard over the entrance"
+                fill
+                sizes="(max-width: 1024px) 90vw, 440px"
+                className="gu-zoom object-cover object-[center_62%]"
+              />
+            </div>
             <div className="flex flex-col gap-1">
               <Row href={site.mapsUrl} external icon={<PinIcon />} title="Address">
                 {keepTogether(site.address)}
@@ -53,8 +66,14 @@ export default function ContactUs() {
               <Row href={`mailto:${site.email}`} icon={<MailIcon />} title="Email">
                 {site.email}
               </Row>
-              <Row href={`tel:${site.phoneHref}`} icon={<PhoneIcon />} title="Phone">
-                {site.phone}
+              <Row icon={<PhoneIcon />} title="Phone">
+                <span className="flex flex-col gap-1">
+                  {site.phones.map((p) => (
+                    <a key={p.href} href={`tel:${p.href}`} className="text-white/90 no-underline transition-colors hover:text-white hover:underline">
+                      {p.display}
+                    </a>
+                  ))}
+                </span>
               </Row>
             </div>
             <div className="grid gap-3 px-3 pb-2 sm:flex sm:flex-wrap sm:px-4">

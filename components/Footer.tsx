@@ -50,9 +50,11 @@ export default function Footer() {
             </nav>
             <address className="flex flex-col gap-3 not-italic">
               <span className="text-xs font-bold uppercase tracking-[0.18em] text-cream/50">Visit us</span>
-              <a href={`tel:${site.phoneHref}`} className="text-cream/80 no-underline transition-colors hover:text-cream">
-                {site.phone}
-              </a>
+              {site.phones.map((p) => (
+                <a key={p.href} href={`tel:${p.href}`} className="text-cream/80 no-underline transition-colors hover:text-cream">
+                  {p.display}
+                </a>
+              ))}
               <a href={`mailto:${site.email}`} className="[overflow-wrap:anywhere] text-cream/80 no-underline transition-colors hover:text-cream">
                 {site.email}
               </a>
