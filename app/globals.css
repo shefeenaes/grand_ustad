@@ -269,6 +269,8 @@ h3 {
 .gu-link:hover::after { width: 100%; }
 .gu-field { transition: border-color 0.3s, box-shadow 0.3s; }
 .gu-field:focus { outline: none; border-color: var(--color-brand); box-shadow: 0 0 0 4px rgba(50, 74, 72, 0.2); }
+.gu-field[aria-invalid="true"] { border-color: var(--color-chili); }
+.gu-field[aria-invalid="true"]:focus { box-shadow: 0 0 0 4px rgba(227, 69, 47, 0.18); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
