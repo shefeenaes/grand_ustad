@@ -100,16 +100,31 @@ export function Ustad({ className = "" }: { className?: string }) {
       <circle cx="34" cy="252" r="10" fill={SKIN} stroke={INK} strokeWidth="3.5" />
       <g transform="translate(0,-6)">
         <ellipse cx="34" cy="240" rx="30" ry="6" fill={INK} />
-        <circle cx="34" cy="235" r="7" fill={CHILI} />
-        <g className="gu-cloche">
+        {/* Biryani: saffron rice mound, a piece of chicken on top, mint leaves */}
+        <path d="M13 234 Q14 219 26 215 Q34 212 42 215 Q54 219 55 234 Z" fill="#F0C355" stroke={INK} strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M19 227 l4-2 M27 222 l-3 2 M41 223 l4 2 M45 230 l3-1 M24 231 l4-1 M34 228 l4 1" stroke="#FFF6DC" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+        <path d="M27 217 q3-7 10-5 q6 2 4 7 q-7 3-14-2 Z" fill="#A5561F" stroke={INK} strokeWidth="1.8" strokeLinejoin="round" />
+        <ellipse cx="21" cy="221" rx="3.4" ry="1.7" transform="rotate(-30 21 221)" fill="#3F8F4A" />
+        <ellipse cx="46" cy="223" rx="3.4" ry="1.7" transform="rotate(28 46 223)" fill="#3F8F4A" />
+        {/* Steam sits behind the lid, which lifts high enough to show the whole dish */}
+        <Steam paths={["M22 200c-4-6 4-10 0-16", "M34 196c-4-6 4-10 0-16", "M46 200c-4-6 4-10 0-16"]} />
+        <g className="gu-cloche" style={{ "--gu-lift": "-26px" } as React.CSSProperties}>
           <path d="M8 232 A26 26 0 0 1 60 232 Z" fill={CREAM} stroke={INK} strokeWidth="3" />
           <circle cx="34" cy="204" r="4" fill={INK} />
         </g>
-        <Steam paths={["M22 200c-4-6 4-10 0-16", "M34 196c-4-6 4-10 0-16", "M46 200c-4-6 4-10 0-16"]} />
       </g>
       <g className="gu-wave">
         <path d="M214 222 L262 172" stroke={INK} strokeWidth="3.5" strokeLinecap="round" fill="none" />
         <circle cx="266" cy="168" r="10" fill={SKIN} stroke={INK} strokeWidth="3.5" />
+      </g>
+      {/* White sticker edge behind the head, so the green fez stays readable over dark or green photos */}
+      <g fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="11" strokeLinejoin="round" strokeLinecap="round">
+        <circle cx="150" cy="130" r="44" />
+        <path d="M114 96 L121 46 Q150 32 179 46 L186 96 Z" />
+        <path d="M108 92 Q150 80 192 92 L192 102 Q150 116 108 102 Z" />
+        <path d="M144 38 Q114 42 106 70" fill="none" strokeWidth="14" />
+        <path d="M101 74 H111 L114 104 L98 104 Z" />
+        <path d="M150 148 C160 142 174 144 184 152 C190 148 194 142 192 136 C195 146 190 160 176 162 C166 164 156 160 150 156 C144 160 134 164 124 162 C110 160 105 146 108 136 C106 142 110 148 116 152 C126 144 140 142 150 148 Z" />
       </g>
       <UstadHeadPaths />
     </svg>

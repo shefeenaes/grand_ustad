@@ -51,6 +51,15 @@ export const site = {
   ],
   services: [
     {
+      slug: "fine-dining-restaurant",
+      title: "Fine Dining Restaurant",
+      icon: "cloche",
+      image: "/images/restaurant-interior.jpeg",
+      imageAlt: "The Grand Ustad dining room with leather chairs, marble tables and warm wall lighting",
+      description:
+        "Step into a world of culinary sophistication at our Fine Dining Restaurant. Each visit is a gastronomic adventure, where masterfully crafted dishes meet an ambiance of elegance. From the first bite to the final sip, indulge in a symphony of flavors that transform dining into an unforgettable experience.",
+    },
+    {
       slug: "outdoor-events",
       title: "Outdoor Events",
       icon: "tent",
@@ -94,15 +103,6 @@ export const site = {
       imageAlt: "Catering trays of biryani, curries and kebabs packed for delivery by Grand Ustad",
       description:
         "Freshly prepared food, delivered when and where you need it. We take corporate party orders, office lunches, family get-togethers and bulk meal orders of any size, with menus tailored to your guests and your budget. Every order is cooked in our own kitchen with the same care as our restaurant, and delivered hot and on time.",
-    },
-    {
-      slug: "fine-dining-restaurant",
-      title: "Fine Dining Restaurant",
-      icon: "cloche",
-      image: "/images/restaurant-interior.jpeg",
-      imageAlt: "The Grand Ustad dining room with leather chairs, marble tables and warm wall lighting",
-      description:
-        "Step into a world of culinary sophistication at our Fine Dining Restaurant. Each visit is a gastronomic adventure, where masterfully crafted dishes meet an ambiance of elegance. From the first bite to the final sip, indulge in a symphony of flavors that transform dining into an unforgettable experience.",
     },
   ],
   /** Listed in mosaic order. `size` sets the tile: feature is 2×2, tall is 1×2, wide is 2×1. `focus` keeps the food in frame when a tile crops. */

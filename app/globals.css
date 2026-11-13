@@ -88,7 +88,7 @@ h3 {
 }
 @keyframes gu-lift {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+  50% { transform: translateY(var(--gu-lift, -14px)); }
 }
 @keyframes gu-wave {
   0%, 100% { transform: rotate(0); }
